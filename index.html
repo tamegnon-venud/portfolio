@@ -3,13 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sètondji Venud TAMEGNON | Portfolio, Statistique & Data</title>
-  <meta name="description" content="Portfolio de Sètondji Venud Tamegnon, étudiant en Licence 2 de Statistique Appliquée à l'Université de Parakou. Futur Data Analyst." />
+  <title>Portfolio | Sètondji Venud TAMEGNON</title>
+  <meta name="description" content="Portfolio de Sètondji Venud Tamegnon, étudiant en Licence 2 de Statistique Appliquée à l’Université de Parakou (Bénin). Compétences, formation et contact." />
+  <meta name="color-scheme" content="dark" />
+
+  <link rel="canonical" href="https://tamegnon-venud.github.io/portfolio/" />
+
+  <!-- Aperçu de partage (WhatsApp, LinkedIn…) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tamegnon-venud.github.io/portfolio/" />
+  <meta property="og:image" content="https://tamegnon-venud.github.io/portfolio/photo.jpg" />
+  <meta property="og:image:alt" content="Photo de Sètondji Venud Tamegnon" />
+  <meta property="og:title" content="Portfolio | Sètondji Venud TAMEGNON" />
+  <meta property="og:description" content="Portfolio de Sètondji Venud Tamegnon, étudiant en Licence 2 de Statistique Appliquée à l’Université de Parakou (Bénin). Compétences, formation et contact." />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="https://tamegnon-venud.github.io/portfolio/photo.jpg" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B1120'/%3E%3Crect x='2' y='2' width='60' height='60' rx='12' fill='none' stroke='%2306B6D4' stroke-opacity='.5' stroke-width='2'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='32' font-weight='700' text-anchor='middle' fill='%2306B6D4'%3EVT%3C/text%3E%3C/svg%3E" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Sètondji Venud Tamegnon",
+    "url": "https://tamegnon-venud.github.io/portfolio/",
+    "image": "https://tamegnon-venud.github.io/portfolio/photo.jpg",
+    "jobTitle": "Étudiant en Statistique Appliquée",
+    "affiliation": { "@type": "CollegeOrUniversity", "name": "Université de Parakou" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Parakou", "addressCountry": "BJ" },
+    "sameAs": [
+      "https://linkedin.com/in/venud-tamegnon-61b8183b2",
+      "https://github.com/tamegnon-venud"
+    ]
+  }
+  </script>
   <meta name="theme-color" content="#0B1120" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -27,7 +61,50 @@
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { color-scheme: dark; }
+    @media (prefers-reduced-motion: no-preference) {
+      html { scroll-behavior: smooth; }
+    }
+    section[id] { scroll-margin-top: 72px; }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    .skip-link {
+      position: absolute;
+      left: 12px;
+      top: -60px;
+      z-index: 100;
+      background: var(--cyan);
+      color: #0B1120;
+      font-weight: 600;
+      font-size: 0.88rem;
+      padding: 10px 16px;
+      border-radius: 8px;
+    }
+    .skip-link:focus { top: 10px; }
+    main:focus { outline: none; }
+    .contact-intro {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 18px;
+      max-width: 44ch;
+    }
+    .form-status { font-size: 0.9rem; min-height: 1.3em; margin: 0; }
+    .form-status.ok { color: #4ADE80; }
+    .form-status.error { color: #F87171; }
+    :focus-visible {
+      outline: 2px solid var(--cyan);
+      outline-offset: 3px;
+    }
     body {
       font-family: var(--font);
       background: var(--bg);
@@ -59,12 +136,33 @@
       justify-content: space-between;
     }
     .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       font-family: var(--head);
       font-weight: 700;
       font-size: 0.95rem;
       letter-spacing: 0.04em;
     }
-    .logo span { color: var(--cyan); }
+    .logo-mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 34px;
+      padding: 0 9px;
+      border-radius: 10px;
+      border: 1px solid rgba(6, 182, 212, 0.45);
+      background: rgba(6, 182, 212, 0.08);
+      color: var(--cyan);
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      line-height: 1;
+    }
+    .logo-name span { color: var(--cyan); }
+    .logo:hover .logo-mark { background: rgba(6, 182, 212, 0.16); }
+    @media (max-width: 480px) {
+      .logo-name { display: none; }
+    }
 
     .nav-links {
       display: flex;
@@ -102,8 +200,7 @@
       border: none;
       cursor: pointer;
       color: var(--muted);
-      opacity: 0.6;
-      transition: opacity 0.2s, color 0.2s;
+      transition: color 0.2s;
       padding: 4px 2px;
       font: inherit;
     }
@@ -260,11 +357,11 @@
       transition: 0.2s;
     }
     .btn-primary {
-      background: var(--blue);
+      background: #2563EB;
       color: white;
     }
     .btn-primary:hover {
-      background: #4b8cf8;
+      background: #1D4ED8;
       transform: translateY(-1px);
     }
     .btn-ghost {
@@ -278,23 +375,68 @@
 
     .social {
       display: flex;
-      gap: 18px;
-      font-size: 0.88rem;
-      color: var(--muted);
+      gap: 12px;
     }
-    .social a:hover { color: var(--cyan); }
+    .social a {
+      width: 44px;
+      height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: rgba(148, 163, 184, 0.05);
+      color: var(--muted);
+      transition: color 0.2s, border-color 0.2s, background 0.2s, box-shadow 0.25s;
+    }
+    .social a:hover {
+      color: var(--cyan);
+      border-color: var(--cyan);
+      background: rgba(6, 182, 212, 0.1);
+      box-shadow: 0 10px 22px rgba(6, 182, 212, 0.25);
+    }
+    .social a { will-change: transform; }
+    .social svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+    .social svg.stroke {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
 
-    /* Photo — cercle élégant ~5cm */
+    .hero-avail {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+    .hero-avail::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #22C55E;
+      flex-shrink: 0;
+    }
+
+    /* Photo — cercle élégant ~190px */
     .hero-photo-wrap {
       justify-self: end;
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 5cm;
+      width: 190px;
     }
     .hero-photo {
-      width: 5cm;
-      height: 5cm;
+      width: 190px;
+      height: 190px;
       aspect-ratio: 1;
       border-radius: 50%;
       overflow: hidden;
@@ -540,6 +682,11 @@
     .contact-form textarea:focus {
       border-color: var(--cyan);
     }
+    .contact-form input:focus-visible,
+    .contact-form textarea:focus-visible {
+      outline: 2px solid var(--cyan);
+      outline-offset: 2px;
+    }
     .contact-form textarea {
       min-height: 120px;
       resize: vertical;
@@ -598,21 +745,22 @@
   </style>
 </head>
 <body>
+  <a href="#top" class="skip-link" data-i18n="skip">Aller au contenu</a>
 
   <!-- HEADER -->
   <header>
     <div class="container nav">
-      <a href="#top" class="logo">V<span>.</span>TAMEGNON</a>
+      <a href="#top" class="logo" aria-label="Sètondji Venud TAMEGNON"><span class="logo-mark" aria-hidden="true">VT</span><span class="logo-name">Venud <span>TAMEGNON</span></span></a>
       <div class="nav-right">
         <nav class="nav-links" id="navLinks">
           <a href="#apropos" data-i18n="nav.about">À propos</a>
           <a href="#competences" data-i18n="nav.skills">Compétences</a>
           <a href="#formation" data-i18n="nav.education">Formation</a>
-          <a href="#projets" data-i18n="nav.projects">Projets</a>
+          <!-- <a href="#projets" data-i18n="nav.projects">Projets</a> -->
           <a href="#contact" data-i18n="nav.contact">Contact</a>
         </nav>
         <div class="lang-dropdown" id="langDropdown">
-          <button type="button" class="lang-switch" id="langSwitch" aria-haspopup="listbox" aria-expanded="false" aria-label="Changer de langue / Switch language">
+          <button type="button" class="lang-switch" id="langSwitch" aria-controls="langMenu" aria-expanded="false" aria-label="Changer de langue / Switch language">
             <svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
               <circle cx="12" cy="12" r="9"/>
               <path d="M3 12h18"/>
@@ -623,17 +771,17 @@
               <polyline points="6 9 12 15 18 9"/>
             </svg>
           </button>
-          <ul class="lang-menu" id="langMenu" role="listbox" aria-label="Langues disponibles">
-            <li role="none">
-              <button type="button" class="lang-option active" role="option" data-lang="fr" aria-selected="true">
+          <ul class="lang-menu" id="langMenu" aria-label="Langues disponibles" data-i18n-aria-label="lang.list">
+            <li>
+              <button type="button" class="lang-option active" data-lang="fr" aria-pressed="true">
                 Français
                 <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="20 6 9 17 4 12"/>
                 </svg>
               </button>
             </li>
-            <li role="none">
-              <button type="button" class="lang-option" role="option" data-lang="en" aria-selected="false">
+            <li>
+              <button type="button" class="lang-option" data-lang="en" aria-pressed="false">
                 English
                 <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="20 6 9 17 4 12"/>
@@ -642,40 +790,48 @@
             </li>
           </ul>
         </div>
-        <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+        <button class="menu-btn" id="menuBtn" aria-label="Menu" data-i18n-aria-label="nav.menu" aria-expanded="false" aria-controls="navLinks">☰</button>
       </div>
     </div>
   </header>
 
-  <main id="top">
+  <main id="top" tabindex="-1">
 
     <!-- HERO -->
     <section class="hero container">
       <div>
         <div class="eyebrow" data-i18n="hero.badge">Licence 2 · Statistique Appliquée</div>
         <h1>Sètondji Venud <span>TAMEGNON</span></h1>
-        <p class="hero-role" data-i18n="hero.role">Étudiant en statistique · Data Analyst en devenir</p>
-        <p class="hero-text" data-i18n="hero.text">
-          Je construis progressivement les bases d’un data analyst : statistique, programmation et visualisation de données.
-        </p>
+        <p class="hero-role" data-i18n="hero.role">Étudiant en Statistique Appliquée · Futur Data Analyst</p>
+        <p class="hero-text" data-i18n="hero.text">Je me forme à la statistique, à la programmation (R, Python, SQL) et à la visualisation de données pour devenir Data Analyst.</p>
+        <p class="hero-avail" data-i18n="hero.avail">Disponible pour un stage ou des projets de collecte et d’analyse de données</p>
         <div class="hero-actions">
           <a href="CV_Venud_Tamegnon.pdf" class="btn btn-primary" download data-i18n="hero.cv">Télécharger mon CV</a>
           <a href="#contact" class="btn btn-ghost" data-i18n="hero.contact">Me contacter</a>
         </div>
         <div class="social">
-          <a href="https://linkedin.com/in/venud-tamegnon-61b8183b2" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="mailto:tamegnonvenud@gmail.com">Email</a>
-          <a href="https://wa.me/2290141617337" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://linkedin.com/in/venud-tamegnon-61b8183b2" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="mailto:tamegnonvenud@gmail.com" aria-label="Email" title="Email">
+            <svg class="stroke" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+          <a href="https://wa.me/2290141617337" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+          <a href="https://github.com/tamegnon-venud" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
         </div>
       </div>
 
       <div class="hero-photo-wrap">
         <div class="hero-photo">
-          <img src="photo.jpg" alt="Photo de Sètondji Venud Tamegnon" width="800" height="1067" />
+          <img src="photo.jpg" alt="Photo de Sètondji Venud Tamegnon" data-i18n-alt="hero.photoAlt" width="800" height="1067" decoding="async" fetchpriority="high" />
         </div>
         <div class="photo-meta">
-          <strong>Sètondji Venud Tamegnon</strong>
-          <span>Parakou, Bénin</span>
+          <strong>Sètondji Venud TAMEGNON</strong>
+          <span data-i18n="loc">Parakou, Bénin</span>
         </div>
       </div>
     </section>
@@ -686,16 +842,8 @@
         <div class="section-label" data-i18n="about.label">Profil</div>
         <h2 class="section-title" data-i18n="about.title">À propos</h2>
         <div class="about-text">
-          <p data-i18n="about.p1">
-            Je suis <strong>Sètondji Venud TAMEGNON</strong>, étudiant en <strong>Licence 2 de Statistique Appliquée</strong>
-            à l’Université de Parakou (Bénin). Après un Baccalauréat série D obtenu en 2025, j’ai choisi de me former
-            sérieusement aux données.
-          </p>
-          <p data-i18n="about.p2">
-            Mon objectif est clair : devenir <strong>Data Analyst</strong>, puis évoluer vers la data science.
-            Pour y arriver, je développe progressivement mes compétences en statistique, programmation (R, Python, SQL)
-            et visualisation, en restant honnête sur mon niveau actuel.
-          </p>
+          <p data-i18n="about.p1">Je suis <strong>Sètondji Venud TAMEGNON</strong>, étudiant en <strong>deuxième année de Licence en Statistique Appliquée</strong> à l’Université de Parakou, au Bénin. Après l’obtention de mon baccalauréat série D en 2025, j’ai choisi de poursuivre un parcours qui me permet de comprendre les données, de les analyser et d’en tirer des informations utiles.</p>
+          <p data-i18n="about.p2">Je souhaite devenir <strong>Data Analyst</strong>, avec l’ambition d’évoluer progressivement vers la Data Science. Ce qui m’intéresse particulièrement, c’est de transformer des données brutes en informations compréhensibles pour mieux éclairer les décisions. Pour y parvenir, je développe mes connaissances en statistique, en programmation avec R et Python, en SQL et en visualisation de données.</p>
         </div>
       </div>
     </section>
@@ -703,41 +851,39 @@
     <!-- COMPÉTENCES -->
     <section id="competences">
       <div class="container">
-        <div class="section-label" data-i18n="skills.label">Outils</div>
+        <div class="section-label" data-i18n="skills.label">Savoir-faire</div>
         <h2 class="section-title" data-i18n="skills.title">Compétences</h2>
 
         <div class="skills-grid">
           <div class="skill-card">
-            <h3 data-i18n="skills.card1.title">Statistique & données</h3>
+            <h3 data-i18n="skills.card1.title">Statistique &amp; données</h3>
             <ul>
-              <li data-i18n="skills.card1.li1">R (bases)</li>
-              <li data-i18n="skills.card1.li2">Python (bases)</li>
-              <li data-i18n="skills.card1.li3">SQL (bases)</li>
+              <li data-i18n="skills.card1.li1">R</li>
+              <li data-i18n="skills.card1.li2">Python</li>
+              <li data-i18n="skills.card1.li3">SQL</li>
               <li data-i18n="skills.card1.li4">Excel</li>
-              <li data-i18n="skills.card1.li5">Statistiques descriptives</li>
             </ul>
           </div>
           <div class="skill-card">
-            <h3 data-i18n="skills.card2.title">Développement & outils</h3>
+            <h3 data-i18n="skills.card2.title">Développement &amp; outils</h3>
             <ul>
               <li data-i18n="skills.card2.li1">HTML5 / CSS3</li>
               <li data-i18n="skills.card2.li2">JavaScript (bases)</li>
-              <li data-i18n="skills.card2.li3">Git & GitHub</li>
+              <li data-i18n="skills.card2.li3">Git &amp; GitHub</li>
               <li data-i18n="skills.card2.li4">LaTeX</li>
               <li data-i18n="skills.card2.li5">VS Code</li>
             </ul>
           </div>
           <div class="skill-card">
-            <h3 data-i18n="skills.card3.title">En apprentissage</h3>
+            <h3 data-i18n="skills.card3.title">En cours d’apprentissage</h3>
             <ul>
-              <li data-i18n="skills.card3.li1">Power BI</li>
-              <li data-i18n="skills.card3.li2">Machine Learning (bases)</li>
-              <li data-i18n="skills.card3.li3">R Shiny</li>
-              <li data-i18n="skills.card3.li4">Visualisation avancée</li>
+              <li data-i18n="skills.card3.li1">Initiation au Machine Learning</li>
+              <li data-i18n="skills.card3.li2">Visualisation avancée des données</li>
+              <li data-i18n="skills.card3.li3">Approfondissement de la programmation statistique</li>
             </ul>
           </div>
         </div>
-        <p class="skills-note" data-i18n="skills.note">Ces compétences sont en construction. Je préfère l’indiquer clairement plutôt que de surestimer mon niveau.</p>
+        <p class="skills-note" data-i18n="skills.note">Mes compétences évoluent au fil de mes apprentissages et de mes expériences pratiques.</p>
       </div>
     </section>
 
@@ -748,16 +894,14 @@
         <h2 class="section-title" data-i18n="education.title">Formation</h2>
         <div class="edu-card">
           <h3 data-i18n="education.cardTitle">Licence 2 — Statistique Appliquée</h3>
-          <div class="edu-meta" data-i18n="education.meta">Université de Parakou, Bénin · 2025 – 2026 (en cours)</div>
-          <p data-i18n="education.desc">
-            Formation centrée sur les fondements de la statistique, la programmation scientifique (R et Python),
-            la collecte et l’analyse de données, ainsi que la communication des résultats.
-          </p>
+          <div class="edu-meta" data-i18n="education.meta">Université de Parakou, Bénin · 2026 – 2027 (en cours)</div>
+          <p data-i18n="education.desc">Ma formation en Statistique Appliquée me permet d’acquérir les bases nécessaires pour collecter, organiser, analyser et interpréter des données. Elle combine les méthodes statistiques, la programmation scientifique avec R et Python, ainsi que la présentation et la visualisation des résultats.</p>
         </div>
       </div>
     </section>
 
     <!-- PROJETS -->
+    <!-- SECTION MASQUÉE : retirez les marques de commentaire quand vos projets seront prêts
     <section id="projets">
       <div class="container">
         <div class="section-label" data-i18n="projects.label">Portfolio</div>
@@ -768,56 +912,63 @@
             <div class="project-stack">R · ggplot2 · dplyr</div>
             <h3 data-i18n="projects.p1.title">Analyse exploratoire de données</h3>
             <p data-i18n="projects.p1.desc">Nettoyage, description et visualisation d’un jeu de données public pour identifier les tendances principales.</p>
-            <span class="status" data-i18n="projects.status">En construction</span>
+            <span class="status" data-i18n="projects.status">En cours</span>
           </article>
           <article class="project-card">
             <div class="project-stack">Excel · Power BI</div>
             <h3 data-i18n="projects.p2.title">Tableau de bord simple</h3>
             <p data-i18n="projects.p2.desc">Création d’un dashboard clair pour explorer des données démographiques ou académiques.</p>
-            <span class="status" data-i18n="projects.status">En construction</span>
+            <span class="status" data-i18n="projects.status">En cours</span>
           </article>
           <article class="project-card">
             <div class="project-stack">Python · pandas</div>
             <h3 data-i18n="projects.p3.title">Premiers modèles statistiques</h3>
             <p data-i18n="projects.p3.desc">Mise en pratique des concepts vus en cours (régression, tests) sur des données réelles.</p>
-            <span class="status" data-i18n="projects.status">En construction</span>
+            <span class="status" data-i18n="projects.status">En cours</span>
           </article>
         </div>
       </div>
     </section>
+    -->
 
     <!-- CONTACT -->
     <section id="contact" class="section-dark">
       <div class="container">
-        <div class="section-label" data-i18n="contact.label">Échange</div>
+        <div class="section-label" data-i18n="contact.label">Me joindre</div>
         <h2 class="section-title" data-i18n="contact.title">Contact</h2>
 
         <div class="contact-grid">
           <div class="contact-info">
             <h3 data-i18n="contact.subtitle">Échangeons</h3>
+            <p class="contact-intro" data-i18n="contact.intro">Une question, une idée ou une opportunité ? Je serai ravi d’échanger avec vous.</p>
             <div class="contact-item">
-              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               <a href="mailto:tamegnonvenud@gmail.com">tamegnonvenud@gmail.com</a>
             </div>
             <div class="contact-item">
-              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              <a href="https://wa.me/2290141617337" target="_blank" rel="noopener">+229 01 41 61 73 37</a>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="https://wa.me/2290141617337" target="_blank" rel="noopener">WhatsApp : +229 01 41 61 73 37</a>
             </div>
             <div class="contact-item">
-              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              Parakou, Bénin
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span data-i18n="loc">Parakou, Bénin</span>
             </div>
             <div class="contact-item" style="margin-top: 16px;">
-              <a href="https://linkedin.com/in/venud-tamegnon-61b8183b2" target="_blank" rel="noopener" style="color: var(--cyan);" data-i18n="contact.linkedin">→ Voir mon LinkedIn</a>
+              <a href="https://linkedin.com/in/venud-tamegnon-61b8183b2" target="_blank" rel="noopener" style="color: var(--cyan);" data-i18n="contact.linkedin">Retrouvons-nous sur LinkedIn</a>
             </div>
           </div>
 
           <form class="contact-form" action="https://formspree.io/f/xljrlkzw" method="POST">
-            <input type="text" name="nom" data-i18n-placeholder="form.name" placeholder="Votre nom" required />
-            <input type="email" name="email" data-i18n-placeholder="form.email" placeholder="Votre email" required />
-            <textarea name="message" data-i18n-placeholder="form.message" placeholder="Votre message..." required></textarea>
+            <label class="sr-only" for="f-nom" data-i18n="form.nameLabel">Nom</label>
+            <input type="text" id="f-nom" name="nom" autocomplete="name" data-i18n-placeholder="form.name" placeholder="Votre nom" required />
+            <label class="sr-only" for="f-email" data-i18n="form.emailLabel">Email</label>
+            <input type="email" id="f-email" name="email" autocomplete="email" data-i18n-placeholder="form.email" placeholder="Votre email" required />
+            <label class="sr-only" for="f-message" data-i18n="form.messageLabel">Message</label>
+            <textarea id="f-message" name="message" data-i18n-placeholder="form.message" placeholder="Écrivez-moi votre message…" required></textarea>
             <input type="hidden" name="_subject" value="Nouveau message via le portfolio" />
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none" />
             <button type="submit" class="btn btn-primary" data-i18n="form.submit">Envoyer le message</button>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
           </form>
         </div>
       </div>
@@ -826,30 +977,42 @@
   </main>
 
   <footer>
-    <div class="container" data-i18n="footer.text">
-      © 2026 Sètondji Venud TAMEGNON — Construit avec sérieux et du code.
-    </div>
+    <div class="container" data-i18n="footer.text">© 2026 Sètondji Venud TAMEGNON. Un parcours, des apprentissages et une passion pour les données.</div>
   </footer>
 
   <script>
-    const btn = document.getElementById('menuBtn');
-    const links = document.getElementById('navLinks');
-    btn.addEventListener('click', () => {
-      links.classList.toggle('open');
-      btn.textContent = links.classList.contains('open') ? '✕' : '☰';
-    });
-    links.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        links.classList.remove('open');
-        btn.textContent = '☰';
+    (function () {
+      const btn = document.getElementById('menuBtn');
+      const links = document.getElementById('navLinks');
+
+      function setOpen(open) {
+        links.classList.toggle('open', open);
+        btn.textContent = open ? '✕' : '☰';
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      }
+
+      btn.addEventListener('click', () => setOpen(!links.classList.contains('open')));
+      links.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setOpen(false)));
+      document.addEventListener('click', (e) => {
+        if (!links.contains(e.target) && !btn.contains(e.target)) setOpen(false);
       });
-    });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && links.classList.contains('open')) {
+          setOpen(false);
+          btn.focus();
+        }
+      });
+    })();
   </script>
 
   <script>
     // Bascule bilingue FR / EN
     (function () {
       const STORAGE_KEY = 'venud-portfolio-lang';
+      const store = {
+        get: (k) => { try { return localStorage.getItem(k); } catch (e) { return null; } },
+        set: (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} }
+      };
 
       const translations = {
         fr: {
@@ -858,40 +1021,47 @@
           'nav.education': 'Formation',
           'nav.projects': 'Projets',
           'nav.contact': 'Contact',
+          'nav.menu': 'Menu',
+          'lang.list': 'Langues disponibles',
+          'skip': 'Aller au contenu',
+          'loc': 'Parakou, Bénin',
+          'hero.photoAlt': 'Photo de Sètondji Venud Tamegnon',
+          'hero.avail': 'Disponible pour un stage ou des projets de collecte et d’analyse de données',
+          'form.nameLabel': 'Nom',
+          'form.emailLabel': 'Email',
+          'form.messageLabel': 'Message',
           'hero.badge': 'Licence 2 · Statistique Appliquée',
-          'hero.role': 'Étudiant en statistique · Data Analyst en devenir',
-          'hero.text': 'Je construis progressivement les bases d’un data analyst : statistique, programmation et visualisation de données.',
+          'hero.role': 'Étudiant en Statistique Appliquée · Futur Data Analyst',
+          'hero.text': 'Je me forme à la statistique, à la programmation (R, Python, SQL) et à la visualisation de données pour devenir Data Analyst.',
           'hero.cv': 'Télécharger mon CV',
           'hero.contact': 'Me contacter',
           'about.label': 'Profil',
           'about.title': 'À propos',
-          'about.p1': 'Je suis <strong>Sètondji Venud TAMEGNON</strong>, étudiant en <strong>Licence 2 de Statistique Appliquée</strong> à l’Université de Parakou (Bénin). Après un Baccalauréat série D obtenu en 2025, j’ai choisi de me former sérieusement aux données.',
-          'about.p2': 'Mon objectif est clair : devenir <strong>Data Analyst</strong>, puis évoluer vers la data science. Pour y arriver, je développe progressivement mes compétences en statistique, programmation (R, Python, SQL) et visualisation, en restant honnête sur mon niveau actuel.',
-          'skills.label': 'Outils',
+          'about.p1': 'Je suis <strong>Sètondji Venud TAMEGNON</strong>, étudiant en <strong>deuxième année de Licence en Statistique Appliquée</strong> à l’Université de Parakou, au Bénin. Après l’obtention de mon baccalauréat série D en 2025, j’ai choisi de poursuivre un parcours qui me permet de comprendre les données, de les analyser et d’en tirer des informations utiles.',
+          'about.p2': 'Je souhaite devenir <strong>Data Analyst</strong>, avec l’ambition d’évoluer progressivement vers la Data Science. Ce qui m’intéresse particulièrement, c’est de transformer des données brutes en informations compréhensibles pour mieux éclairer les décisions. Pour y parvenir, je développe mes connaissances en statistique, en programmation avec R et Python, en SQL et en visualisation de données.',
+          'skills.label': 'Savoir-faire',
           'skills.title': 'Compétences',
           'skills.card1.title': 'Statistique & données',
-          'skills.card1.li1': 'R (bases)',
-          'skills.card1.li2': 'Python (bases)',
-          'skills.card1.li3': 'SQL (bases)',
+          'skills.card1.li1': 'R',
+          'skills.card1.li2': 'Python',
+          'skills.card1.li3': 'SQL',
           'skills.card1.li4': 'Excel',
-          'skills.card1.li5': 'Statistiques descriptives',
           'skills.card2.title': 'Développement & outils',
           'skills.card2.li1': 'HTML5 / CSS3',
           'skills.card2.li2': 'JavaScript (bases)',
           'skills.card2.li3': 'Git & GitHub',
           'skills.card2.li4': 'LaTeX',
           'skills.card2.li5': 'VS Code',
-          'skills.card3.title': 'En apprentissage',
-          'skills.card3.li1': 'Power BI',
-          'skills.card3.li2': 'Machine Learning (bases)',
-          'skills.card3.li3': 'R Shiny',
-          'skills.card3.li4': 'Visualisation avancée',
-          'skills.note': 'Ces compétences sont en construction. Je préfère l’indiquer clairement plutôt que de surestimer mon niveau.',
+          'skills.card3.title': 'En cours d’apprentissage',
+          'skills.card3.li1': 'Initiation au Machine Learning',
+          'skills.card3.li2': 'Visualisation avancée des données',
+          'skills.card3.li3': 'Approfondissement de la programmation statistique',
+          'skills.note': 'Mes compétences évoluent au fil de mes apprentissages et de mes expériences pratiques.',
           'education.label': 'Parcours',
           'education.title': 'Formation',
           'education.cardTitle': 'Licence 2 — Statistique Appliquée',
-          'education.meta': 'Université de Parakou, Bénin · 2025 – 2026 (en cours)',
-          'education.desc': 'Formation centrée sur les fondements de la statistique, la programmation scientifique (R et Python), la collecte et l’analyse de données, ainsi que la communication des résultats.',
+          'education.meta': 'Université de Parakou, Bénin · 2026 – 2027 (en cours)',
+          'education.desc': 'Ma formation en Statistique Appliquée me permet d’acquérir les bases nécessaires pour collecter, organiser, analyser et interpréter des données. Elle combine les méthodes statistiques, la programmation scientifique avec R et Python, ainsi que la présentation et la visualisation des résultats.',
           'projects.label': 'Portfolio',
           'projects.title': 'Projets d’apprentissage',
           'projects.p1.title': 'Analyse exploratoire de données',
@@ -900,13 +1070,16 @@
           'projects.p2.desc': 'Création d’un dashboard clair pour explorer des données démographiques ou académiques.',
           'projects.p3.title': 'Premiers modèles statistiques',
           'projects.p3.desc': 'Mise en pratique des concepts vus en cours (régression, tests) sur des données réelles.',
-          'projects.status': 'En construction',
-          'contact.label': 'Échange',
+          'projects.status': 'En cours',
+          'contact.label': 'Me joindre',
           'contact.title': 'Contact',
           'contact.subtitle': 'Échangeons',
-          'contact.linkedin': '→ Voir mon LinkedIn',
+          'contact.intro': 'Une question, une idée ou une opportunité ? Je serai ravi d’échanger avec vous.',
+          'contact.linkedin': 'Retrouvons-nous sur LinkedIn',
           'form.submit': 'Envoyer le message',
-          'footer.text': '© 2026 Sètondji Venud TAMEGNON — Construit avec sérieux et du code.'
+          'form.success': 'Merci, votre message a bien été envoyé.',
+          'form.error': 'L’envoi a échoué. Réessayez ou écrivez-moi directement par e-mail.',
+          'footer.text': '© ' + new Date().getFullYear() + ' Sètondji Venud TAMEGNON. Un parcours, des apprentissages et une passion pour les données.'
         },
         en: {
           'nav.about': 'About',
@@ -914,23 +1087,31 @@
           'nav.education': 'Education',
           'nav.projects': 'Projects',
           'nav.contact': 'Contact',
-          'hero.badge': 'First-Year · Applied Statistics',
-          'hero.role': 'Statistics Student · Data Analyst in the Making',
-          'hero.text': 'I’m progressively building the foundations of a data analyst: statistics, programming, and data visualization.',
+          'nav.menu': 'Menu',
+          'lang.list': 'Available languages',
+          'skip': 'Skip to content',
+          'loc': 'Parakou, Benin',
+          'hero.photoAlt': 'Photo of Sètondji Venud Tamegnon',
+          'hero.avail': 'Open to internships and data collection or analysis projects',
+          'form.nameLabel': 'Name',
+          'form.emailLabel': 'Email',
+          'form.messageLabel': 'Message',
+          'hero.badge': 'Second-Year · Applied Statistics',
+          'hero.role': 'Applied Statistics Student · Aspiring Data Analyst',
+          'hero.text': 'I’m training in statistics, programming (R, Python, SQL) and data visualization to become a Data Analyst.',
           'hero.cv': 'Download my CV',
           'hero.contact': 'Contact me',
           'about.label': 'Profile',
           'about.title': 'About',
-          'about.p1': 'I am <strong>Sètondji Venud TAMEGNON</strong>, a <strong>first-year Applied Statistics</strong> student at the University of Parakou (Benin). After earning a science-track Baccalauréat in 2025, I chose to build a serious foundation in data.',
-          'about.p2': 'My goal is clear: become a <strong>Data Analyst</strong>, then move toward data science. To get there, I’m steadily developing my skills in statistics, programming (R, Python, SQL), and visualization, while staying honest about my current level.',
-          'skills.label': 'Tools',
+          'about.p1': 'I am <strong>Sètondji Venud TAMEGNON</strong>, a <strong>second-year Applied Statistics</strong> student at the University of Parakou, Benin. After earning my Baccalauréat (Science Track) in 2025, I chose a field that allows me to understand data, analyze it and turn it into useful information.',
+          'about.p2': 'My goal is to become a <strong>Data Analyst</strong>, with the ambition of gradually moving into Data Science. I am particularly interested in turning raw data into meaningful insights that can support better decisions. To achieve this, I am developing my knowledge of statistics, programming with R and Python, SQL, and data visualization.',
+          'skills.label': 'Toolkit',
           'skills.title': 'Skills',
           'skills.card1.title': 'Statistics & Data',
-          'skills.card1.li1': 'R (basics)',
-          'skills.card1.li2': 'Python (basics)',
-          'skills.card1.li3': 'SQL (basics)',
+          'skills.card1.li1': 'R',
+          'skills.card1.li2': 'Python',
+          'skills.card1.li3': 'SQL',
           'skills.card1.li4': 'Excel',
-          'skills.card1.li5': 'Descriptive statistics',
           'skills.card2.title': 'Development & Tools',
           'skills.card2.li1': 'HTML5 / CSS3',
           'skills.card2.li2': 'JavaScript (basics)',
@@ -938,16 +1119,15 @@
           'skills.card2.li4': 'LaTeX',
           'skills.card2.li5': 'VS Code',
           'skills.card3.title': 'Currently Learning',
-          'skills.card3.li1': 'Power BI',
-          'skills.card3.li2': 'Machine Learning (basics)',
-          'skills.card3.li3': 'R Shiny',
-          'skills.card3.li4': 'Advanced visualization',
-          'skills.note': 'These skills are still developing. I’d rather state that clearly than overstate my level.',
-          'education.label': 'Path',
+          'skills.card3.li1': 'Introduction to Machine Learning',
+          'skills.card3.li2': 'Advanced Data Visualization',
+          'skills.card3.li3': 'Further Development of Statistical Programming Skills',
+          'skills.note': 'My skills continue to grow through learning and hands-on experience.',
+          'education.label': 'Background',
           'education.title': 'Education',
-          'education.cardTitle': 'First Year — Applied Statistics',
-          'education.meta': 'University of Parakou, Benin · 2025 – 2026 (ongoing)',
-          'education.desc': 'A program focused on the foundations of statistics, scientific programming (R and Python), data collection and analysis, and communicating results.',
+          'education.cardTitle': 'Second Year (Licence 2) — Applied Statistics',
+          'education.meta': 'University of Parakou, Benin · 2026 – 2027 (ongoing)',
+          'education.desc': 'My Applied Statistics program provides me with the foundations to collect, organize, analyze and interpret data. It combines statistical methods, scientific programming with R and Python, and the presentation and visualization of results.',
           'projects.label': 'Portfolio',
           'projects.title': 'Learning Projects',
           'projects.p1.title': 'Exploratory data analysis',
@@ -959,25 +1139,28 @@
           'projects.status': 'In progress',
           'contact.label': 'Get in touch',
           'contact.title': 'Contact',
-          'contact.subtitle': 'Let’s talk',
-          'contact.linkedin': '→ View my LinkedIn',
+          'contact.subtitle': 'Let’s Connect',
+          'contact.intro': 'Have a question, an idea or an opportunity? I’d be happy to connect.',
+          'contact.linkedin': 'Connect with me on LinkedIn',
           'form.submit': 'Send message',
-          'footer.text': '© 2026 Sètondji Venud TAMEGNON — Built with care and code.'
+          'form.success': 'Thank you, your message has been sent.',
+          'form.error': 'Sending failed. Please try again or email me directly.',
+          'footer.text': '© ' + new Date().getFullYear() + ' Sètondji Venud TAMEGNON. A journey of learning and a passion for data.'
         }
       };
 
       const placeholders = {
-        fr: { 'form.name': 'Votre nom', 'form.email': 'Votre email', 'form.message': 'Votre message...' },
-        en: { 'form.name': 'Your name', 'form.email': 'Your email', 'form.message': 'Your message...' }
+        fr: { 'form.name': 'Votre nom', 'form.email': 'Votre email', 'form.message': 'Écrivez-moi votre message…' },
+        en: { 'form.name': 'Your name', 'form.email': 'Your email', 'form.message': 'Write your message…' }
       };
 
       const titles = {
-        fr: 'Sètondji Venud TAMEGNON | Statistique & Data',
-        en: 'Sètondji Venud TAMEGNON | Statistics & Data'
+        fr: 'Portfolio | Sètondji Venud TAMEGNON',
+        en: 'Portfolio | Sètondji Venud TAMEGNON'
       };
       const descriptions = {
-        fr: 'Portfolio de Sètondji Venud Tamegnon — étudiant en Licence 2 de Statistique Appliquée à l\'Université de Parakou. Futur Data Analyst.',
-        en: 'Portfolio of Sètondji Venud Tamegnon — first-year Applied Statistics student at the University of Parakou. Aspiring Data Analyst.'
+        fr: 'Portfolio de Sètondji Venud Tamegnon, étudiant en Licence 2 de Statistique Appliquée à l’Université de Parakou (Bénin). Compétences, formation et contact.',
+        en: 'Portfolio of Sètondji Venud Tamegnon, second-year Applied Statistics student at the University of Parakou (Benin). Skills, education and contact.'
       };
 
       const metaDesc = document.querySelector('meta[name="description"]');
@@ -1009,13 +1192,21 @@
           }
         });
 
+        document.querySelectorAll('[data-i18n-alt]').forEach((el) => {
+          const v = translations[lang][el.getAttribute('data-i18n-alt')];
+          if (v !== undefined) el.setAttribute('alt', v);
+        });
+        document.querySelectorAll('[data-i18n-aria-label]').forEach((el) => {
+          const v = translations[lang][el.getAttribute('data-i18n-aria-label')];
+          if (v !== undefined) el.setAttribute('aria-label', v);
+        });
+
         langCode.textContent = lang.toUpperCase();
         langOptions.forEach((opt) => {
           const isActive = opt.getAttribute('data-lang') === lang;
           opt.classList.toggle('active', isActive);
-          opt.setAttribute('aria-selected', isActive ? 'true' : 'false');
+          opt.setAttribute('aria-pressed', isActive ? 'true' : 'false');
         });
-        localStorage.setItem(STORAGE_KEY, lang);
       }
 
       function openLangMenu() {
@@ -1046,6 +1237,7 @@
           e.stopPropagation();
           const lang = opt.getAttribute('data-lang');
           applyLang(lang);
+          store.set(STORAGE_KEY, lang);
           closeLangMenu();
         });
       });
@@ -1060,9 +1252,63 @@
         if (e.key === 'Escape') closeLangMenu();
       });
 
-      const saved = localStorage.getItem(STORAGE_KEY);
+      // Formulaire : envoi sans quitter la page
+      const form = document.querySelector('.contact-form');
+      const statusEl = document.getElementById('formStatus');
+      if (form && statusEl && window.fetch && window.FormData) {
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const submitBtn = form.querySelector('button[type="submit"]');
+          submitBtn.disabled = true;
+          statusEl.className = 'form-status';
+          statusEl.textContent = '';
+          try {
+            const res = await fetch(form.action, {
+              method: 'POST',
+              body: new FormData(form),
+              headers: { Accept: 'application/json' }
+            });
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+            form.reset();
+            statusEl.classList.add('ok');
+            statusEl.textContent = translations[currentLang]['form.success'];
+          } catch (err) {
+            statusEl.classList.add('error');
+            statusEl.textContent = translations[currentLang]['form.error'];
+          } finally {
+            submitBtn.disabled = false;
+          }
+        });
+      }
+
+      const saved = store.get(STORAGE_KEY);
       const browserLang = (navigator.language || 'fr').toLowerCase().startsWith('en') ? 'en' : 'fr';
       applyLang(saved || browserLang);
+    })();
+  </script>
+
+  <script>
+    // Icônes sociales : l'icône se soulève avec un petit rebond au survol / au focus clavier
+    (function () {
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce) return;
+      document.querySelectorAll('.social a').forEach((el) => {
+        let anim = null;
+        const to = (transform, duration, easing) => {
+          const from = getComputedStyle(el).transform;
+          if (anim) anim.cancel();
+          anim = el.animate(
+            [{ transform: from === 'none' ? 'none' : from }, { transform }],
+            { duration, easing, fill: 'forwards' }
+          );
+        };
+        const up = () => to('translateY(-8px) scale(1.1)', 350, 'cubic-bezier(.34,1.56,.64,1)');
+        const down = () => to('translateY(0) scale(1)', 250, 'ease-out');
+        el.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') up(); });
+        el.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse') down(); });
+        el.addEventListener('focus', () => { if (el.matches(':focus-visible')) up(); });
+        el.addEventListener('blur', down);
+      });
     })();
   </script>
 </body>

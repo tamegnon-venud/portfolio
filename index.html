@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sètondji Venud TAMEGNON | Statistique Appliquée &amp; Analyse de données</title>
-  <meta name="description" content="Sètondji Venud Tamegnon, étudiant en Licence 2 de Statistique Appliquée (Université de Parakou, Bénin). Analyse de données avec R, Python, SQL et Excel, développement web ; sondages, analyse multivariée, séries chronologiques. Compétences, formation et contact." />
+  <title>Sètondji Venud TAMEGNON | Statistique appliquée, données &amp; numérique</title>
+  <meta name="description" content="Sètondji Venud Tamegnon, étudiant en Licence 2 de Statistique Appliquée (Université de Parakou, Bénin). Analyse de données avec R, Python et Excel, développement web ; sondages, analyse multivariée, séries chronologiques. Compétences, formation et contact." />
   <meta name="color-scheme" content="dark light" />
   <meta name="google" content="notranslate" />
 
@@ -15,14 +15,14 @@
   <meta property="og:url" content="https://tamegnon-venud.github.io/portfolio/" />
   <meta property="og:image" content="https://tamegnon-venud.github.io/portfolio/photo.jpg" />
   <meta property="og:image:alt" content="Photo de Sètondji Venud Tamegnon" />
-  <meta property="og:title" content="Sètondji Venud TAMEGNON | Statistique Appliquée &amp; Analyse de données" />
-  <meta property="og:description" content="Étudiant en Licence 2 de Statistique Appliquée (Université de Parakou, Bénin). Analyse de données : R, Python, SQL, Excel. Disponible pour un stage ou des missions freelance." />
+  <meta property="og:title" content="Sètondji Venud TAMEGNON | Statistique appliquée, données &amp; numérique" />
+  <meta property="og:description" content="Étudiant en Licence 2 de Statistique Appliquée (Université de Parakou, Bénin). Analyse de données : R, Python, Excel. Disponible pour un stage ou des missions freelance." />
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:site_name" content="Sètondji Venud TAMEGNON" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Sètondji Venud TAMEGNON | Statistique Appliquée &amp; Analyse de données" />
-  <meta name="twitter:description" content="Étudiant en Licence 2 de Statistique Appliquée (Université de Parakou, Bénin). Analyse de données : R, Python, SQL, Excel. Disponible pour un stage ou des missions freelance." />
+  <meta name="twitter:title" content="Sètondji Venud TAMEGNON | Statistique appliquée, données &amp; numérique" />
+  <meta name="twitter:description" content="Étudiant en Licence 2 de Statistique Appliquée (Université de Parakou, Bénin). Analyse de données : R, Python, Excel. Disponible pour un stage ou des missions freelance." />
   <meta name="twitter:image" content="https://tamegnon-venud.github.io/portfolio/photo.jpg" />
 
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B1120'/%3E%3Crect x='2' y='2' width='60' height='60' rx='12' fill='none' stroke='%2306B6D4' stroke-opacity='.5' stroke-width='2'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='32' font-weight='700' text-anchor='middle' fill='%2306B6D4'%3EVT%3C/text%3E%3C/svg%3E" />
@@ -36,7 +36,7 @@
     "image": "https://tamegnon-venud.github.io/portfolio/photo.jpg",
     "jobTitle": "Étudiant en Statistique Appliquée – Analyse de données et développement web",
     "affiliation": { "@type": "CollegeOrUniversity", "name": "Université de Parakou" },
-    "knowsAbout": ["Applied statistics", "Data analysis", "Survey sampling", "Time series", "Multivariate analysis", "R", "Python", "SQL", "Excel", "KoboToolbox"],
+    "knowsAbout": ["Applied statistics", "Data analysis", "Survey sampling", "Time series", "Multivariate analysis", "R", "Python", "Excel", "KoboToolbox"],
     "address": { "@type": "PostalAddress", "addressLocality": "Parakou", "addressCountry": "BJ" },
     "sameAs": [
       "https://linkedin.com/in/venud-tamegnon-61b8183b2",
@@ -244,9 +244,6 @@
     }
     .logo-name span { color: var(--accent); }
     .logo:hover .logo-mark { background: rgba(var(--accent-rgb), 0.16); }
-    @media (max-width: 480px) {
-      .logo-name { display: none; }
-    }
 
     .nav-links {
       display: flex;
@@ -445,6 +442,7 @@
       box-shadow: 0 0 10px var(--accent);
     }
 
+    .hero-greeting { font-size: 1.1rem; font-weight: 600; color: var(--accent); margin-bottom: 4px; }
     .hero h1 {
       font-family: var(--font);
       font-size: clamp(2.2rem, 5vw, 3.1rem);
@@ -1084,6 +1082,71 @@
       .hero-actions { flex-direction: column; align-items: stretch; }
       .hero-actions .btn { width: 100%; justify-content: center; box-sizing: border-box; }
     }
+  
+    /* Services */
+    .services-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:18px; margin-top:28px; }
+    .service-card { background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:22px; }
+    .service-card svg { width:28px; height:28px; fill:none; stroke:var(--accent); stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; margin-bottom:12px; }
+    .service-card h3 { font-family:var(--head); font-size:1.05rem; margin-bottom:6px; }
+    .service-card p { color:var(--muted); font-size:.93rem; margin:0; }
+    .services-note { color:var(--muted); font-size:.88rem; margin-top:20px; }
+    /* Logo : point coloré à la place du carré VT */
+    .logo-name { font-family:var(--head); font-weight:700; font-size:1.35rem; letter-spacing:-0.02em; }
+    .logo-name span { color:var(--accent); }
+    /* Accueil : titres */
+    .hero-greeting { font-size:clamp(1.7rem,4vw,2.4rem); font-weight:700; color:var(--text); line-height:1.15; letter-spacing:-0.02em; margin-bottom:2px; }
+    .hero h1 { font-size:clamp(1.8rem,4vw,2.5rem); }
+    /* Badge « Disponible » (style de la capture) */
+    .hero-avail { background:rgba(34,197,94,.1); border-color:rgba(34,197,94,.35); box-shadow:0 0 22px rgba(34,197,94,.16); }
+    .hero-avail::before { background:#4ADE80; box-shadow:0 0 8px #4ADE80; }
+    @media (prefers-reduced-motion: no-preference) {
+      .hero-avail { animation:glow 3s ease-in-out infinite; }
+      .hero-avail::before { animation:blink 1.8s ease-in-out infinite; }
+      @keyframes glow { 50% { box-shadow:0 0 30px rgba(34,197,94,.3); } }
+      @keyframes blink { 50% { opacity:.35; } }
+    }
+    /* Cartes projets plus compactes */
+    .project-visual { height:96px; }
+    .project-visual svg { width:100px; height:66px; }
+    .project-visual--cert { height:72px; }
+    .project-visual--cert svg { width:38px; height:38px; }
+    .project-body { gap:8px; padding:16px 20px 18px; }
+    .project-card h3 { font-size:1.12rem; }
+    .project-card p { font-size:.92rem; }
+    .project-facts { flex-direction:row; flex-wrap:wrap; gap:4px 14px; }
+    .project-facts li { font-size:.85rem; }
+    .project-facts li:nth-child(3) { display:none; }
+  
+    /* Compétences : colonnes, niveaux en mots (pas de pourcentages) */
+    .sk-center, .skills-sub { text-align:center; }
+    .section-title span { color:var(--accent); }
+    .skills-sub { color:var(--muted); margin:-6px 0 36px; }
+    .skills-grid { grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:36px; }
+    .skill-col h3 { display:flex; align-items:center; gap:10px; font-family:var(--head); font-size:1.15rem; color:var(--accent); padding-bottom:12px; border-bottom:1px solid var(--border); margin-bottom:6px; }
+    .skill-col h3 svg { width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+    .sk-rows, .chips { list-style:none; padding:0; margin:0; }
+    .sk-row { display:flex; justify-content:space-between; align-items:center; gap:12px; padding:11px 0; border-bottom:1px solid var(--border); font-size:.96rem; }
+    .sk-name { display:flex; align-items:center; min-width:0; }
+    .chip { display:inline-grid; place-items:center; min-width:26px; height:24px; padding:0 5px; margin-right:9px; border-radius:6px; background:rgba(var(--accent-rgb),.14); color:var(--accent); font:600 .68rem var(--head); }
+    .sk-lv { display:flex; align-items:center; gap:10px; flex-shrink:0; }
+    .sk-lv em { font-style:normal; font-size:.76rem; color:var(--muted); }
+    .lvbar { display:flex; gap:3px; }
+    .lvbar i { width:16px; height:5px; border-radius:3px; background:var(--soft2); }
+    .lvbar i.on { background:var(--accent); }
+    .chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
+    .chips li { padding:5px 12px; border:1px solid var(--border); border-radius:999px; background:var(--soft); font-size:.85rem; color:var(--muted); }
+    .skills-legend-unused { color:var(--muted); font-size:.84rem; text-align:center; margin-top:28px; }
+      .chip img { display:block; width:16px; height:16px; }
+  
+    /* Compétences : badges uniformes, sans niveaux */
+    .sk-badges { list-style:none; padding:0; margin:16px 0 0; display:flex; flex-wrap:wrap; gap:8px; }
+    .sk-b { display:inline-flex; align-items:center; padding:6px 12px 6px 7px; border:1px solid var(--border); border-radius:999px; background:var(--soft); font-size:.88rem; color:var(--text); line-height:1.3; }
+    .sk-b .chip { margin-right:8px; min-width:24px; }
+    .sk-b.learn { border-style:dashed; color:var(--muted); }
+    .sk-dot { width:6px; height:6px; border-radius:50%; background:var(--accent); display:block; }
+    .skills-learning { margin-top:40px; text-align:center; }
+    .skills-learning h3 { font-family:var(--head); font-size:1.05rem; color:var(--muted); font-weight:600; }
+    .sk-center-badges { justify-content:center; }
   </style>
 </head>
 <body>
@@ -1092,11 +1155,12 @@
   <!-- HEADER -->
   <header>
     <div class="container nav">
-      <a href="#top" class="logo" aria-label="Sètondji Venud TAMEGNON"><span class="logo-mark" aria-hidden="true">VT</span><span class="logo-name">Venud <span>TAMEGNON</span></span></a>
+      <a href="#top" class="logo" aria-label="Sètondji Venud TAMEGNON"><span class="logo-name">Venud<span>.</span></span></a>
       <div class="nav-right">
         <nav class="nav-links" id="navLinks" aria-label="Navigation principale" data-i18n-aria-label="nav.main">
           <a href="#about" data-nav="about" data-i18n="nav.about">À propos</a>
           <a href="#skills" data-nav="skills" data-i18n="nav.skills">Compétences</a>
+          <a href="#services" data-nav="services" data-i18n="nav.services">Services</a>
           <a href="#education" data-nav="education" data-i18n="nav.education">Formation</a>
           <a href="#projects" data-nav="projects" data-i18n="nav.projects">Projets</a>
           <a href="#contact" data-nav="contact" data-i18n="nav.contact">Contact</a>
@@ -1147,9 +1211,10 @@
     <section class="hero container">
       <div>
         <p class="hero-avail pill" data-i18n="hero.avail">Disponible : stage, freelance et autres opportunités</p>
+        <p class="hero-greeting" id="greet">Bonjour, je suis</p>
         <h1>Sètondji Venud <span>TAMEGNON</span></h1>
-        <p class="hero-role" data-i18n="hero.role">Étudiant en Statistique Appliquée · Analyse de données · Développement web</p>
-        <p class="hero-text" data-i18n="hero.text">Je collecte, nettoie et analyse des données avec R et Python (sondages, analyse multivariée, séries chronologiques).</p>
+        <p class="hero-role" data-i18n="hero.role">Étudiant en Statistique Appliquée · Données · Développement web · Numérique</p>
+        <p class="hero-text" data-i18n="hero.text">Passionné par le numérique sous toutes ses formes : j’analyse des données, je conçois des outils web et je transforme des idées en solutions utiles.</p>
         <div class="hero-actions">
           <a href="CV_Venud_Tamegnon_FR.pdf" data-cv-fr="CV_Venud_Tamegnon_FR.pdf" data-cv-en="CV_Venud_Tamegnon_EN.pdf" class="btn btn-primary btn-download" download><svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg><span data-i18n="hero.cv">Télécharger mon CV</span></a>
           <a href="#contact" class="btn btn-ghost btn-arrow"><span data-i18n="hero.contact">Me contacter</span><svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
@@ -1171,7 +1236,7 @@
         <div class="section-label" data-i18n="about.label">Profil</div>
         <h2 class="section-title" data-i18n="about.title">À propos</h2>
         <div class="about-text">
-          <p data-i18n="about.p1">Étudiant en <strong>deuxième année de Licence en Statistique Appliquée</strong> à l’Université de Parakou (Bénin). Je me forme à la <strong>collecte, au traitement et à l’analyse de données</strong>, avec <strong>R, Python, SQL et Excel</strong>. Je développe aussi des sites web (HTML, CSS, JavaScript).</p>
+          <p data-i18n="about.p1">Étudiant en <strong>deuxième année de Licence en Statistique Appliquée</strong> à l’Université de Parakou (Bénin). Je me forme à la <strong>collecte, au traitement et à l’analyse de données</strong>, avec <strong>R, Python et Excel</strong>. Je développe aussi des sites web (HTML, CSS, JavaScript).</p>
           <p data-i18n="about.p2">Je suis disponible et ouvert aux opportunités : <strong>stage</strong>, <strong>missions freelance</strong> et collaborations, en analyse de données, en collecte d’enquêtes ou en développement web. À terme, je souhaite devenir <strong>Data Analyst</strong>, puis évoluer vers la Data Science. Je m’attache aussi à savoir expliquer ce que les résultats signifient, y compris à des personnes qui ne sont pas statisticiennes.</p>
         </div>
       </div>
@@ -1180,58 +1245,50 @@
     <!-- COMPÉTENCES -->
     <section id="skills" data-section="skills">
       <div class="container">
-        <div class="section-label" data-i18n="skills.label">Savoir-faire</div>
-        <h2 class="section-title" data-i18n="skills.title">Compétences</h2>
+        <div class="section-label sk-center" data-i18n="skills.label">Savoir-faire</div>
+        <h2 class="section-title sk-center" data-i18n="skills.title">Mes <span>compétences</span></h2>
+        <p class="skills-sub" data-i18n="skills.sub">Technologies et outils que j’utilise ou que j’apprends</p>
 
         <div class="skills-grid">
-          <div class="skill-card">
-            <h3 data-i18n="skills.card5.title">Méthodes statistiques</h3>
-            <ul>
-              <li data-i18n="skills.card5.li1">Statistique descriptive et inférentielle</li>
-              <li data-i18n="skills.card5.li2">Estimation paramétrique</li>
-              <li data-i18n="skills.card5.li3">Sondages et échantillonnage</li>
-              <li data-i18n="skills.card5.li4">Séries chronologiques</li>
-              <li data-i18n="skills.card5.li5">Analyse multivariée (ACP, AFC, ACM)</li>
-              <li data-i18n="skills.card5.li6">Introduction à l’économétrie</li>
-            </ul>
+          <div class="skill-col">
+            <h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg><span data-i18n="skl.t1">Données et statistique</span></h3>
+            <ul class="sk-badges"><li class="sk-b"><b class="chip" aria-hidden="true"><img alt="" width="16" height="16" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImEiIHgxPSIuNzQxIiB4Mj0iNTkwLjg2IiB5MT0iMy42NjYiIHkyPSI1OTMuNzkiIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoLjIxNjkgMCAwIC4xNDUyNyAtLjE2IDE0LjExMikiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNjYmNlZDAiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM4NDgzOGIiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0iYiIgeDE9IjMwMS4wMyIgeDI9IjcwMy4wNyIgeTE9IjE1MS40IiB5Mj0iNTUzLjQ0IiBncmFkaWVudFRyYW5zZm9ybT0ibWF0cml4KC4xNzU3MiAwIDAgLjE3OTMxIC0uMTYgMTQuMTEyKSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzI3NmRjMyIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzE2NWNhYSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGZpbGw9InVybCgjYSkiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTY0IDEwMC4zOGMtMzUuMzQ2IDAtNjQtMTkuMTktNjQtNDIuODYzIDAtMjMuNjcyIDI4LjY1NC00Mi44NjMgNjQtNDIuODYzczY0IDE5LjE5IDY0IDQyLjg2M2MwIDIzLjY3Mi0yOC42NTQgNDIuODYzLTY0IDQyLjg2M3ptOS43OTYtNjguOTY3Yy0yNi44NjYgMC00OC42NDYgMTMuMTE5LTQ4LjY0NiAyOS4zMDMgMCAxNi4xODMgMjEuNzggMjkuMzAzIDQ4LjY0NiAyOS4zMDNzNDYuNjkzLTguOTcgNDYuNjkzLTI5LjMwM2MwLTIwLjMyNy0xOS44MjctMjkuMzAzLTQ2LjY5My0yOS4zMDN6Ii8+PHBhdGggZmlsbD0idXJsKCNiKSIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNOTcuNDY5IDgxLjAzM3MzLjg3NCAxLjE2OSA2LjEyNCAyLjMwOGMuNzguMzk1IDIuMTMyIDEuMTgzIDMuMTA2IDIuMjE5YTguMzg4IDguMzg4IDAgMCAxIDEuNDIgMi4wNGwxNS4yNjYgMjUuNzQtMjQuNjc0LjAxLTExLjUzNy0yMS42NjZzLTIuMzYzLTQuMDYtMy44MTctNS4yMzdjLTEuMjEzLS45ODItMS43My0xLjMzMS0yLjkyOS0xLjMzMWgtNS44NjJsLjAwNCAyOC4yMTktMjEuODMzLjAwOVY0MS4yNmg0My44NDRzMTkuOTcuMzYgMTkuOTcgMTkuMzU5YzAgMTguOTk5LTE5LjA4MiAyMC40MTMtMTkuMDgyIDIwLjQxM3ptLTkuNDk3LTI0LjEzNy0xMy4yMTgtLjAwOS0uMDA2IDEyLjI1OCAxMy4yMjQtLjAwNXM2LjEyNC0uMDE5IDYuMTI0LTYuMjM1YzAtNi4zNC02LjEyNC02LjAwOS02LjEyNC02LjAwOXoiLz48L3N2Zz4K"></b>R</li><li class="sk-b"><b class="chip" aria-hidden="true"><img alt="" width="16" height="16" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij48bGluZWFyR3JhZGllbnQgaWQ9InB5dGhvbi1vcmlnaW5hbC1hIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjcwLjI1MiIgeTE9IjEyMzcuNDc2IiB4Mj0iMTcwLjY1OSIgeTI9IjExNTEuMDg5IiBncmFkaWVudFRyYW5zZm9ybT0ibWF0cml4KC41NjMgMCAwIC0uNTY4IC0yOS4yMTUgNzA3LjgxNykiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzVBOUZENCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzMwNjk5OCIvPjwvbGluZWFyR3JhZGllbnQ+PGxpbmVhckdyYWRpZW50IGlkPSJweXRob24tb3JpZ2luYWwtYiIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIyMDkuNDc0IiB5MT0iMTA5OC44MTEiIHgyPSIxNzMuNjIiIHkyPSIxMTQ5LjUzNyIgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCguNTYzIDAgMCAtLjU2OCAtMjkuMjE1IDcwNy44MTcpIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNGRkQ0M0IiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNGRkU4NzMiLz48L2xpbmVhckdyYWRpZW50PjxwYXRoIGZpbGw9InVybCgjcHl0aG9uLW9yaWdpbmFsLWEpIiBkPSJNNjMuMzkxIDEuOTg4Yy00LjIyMi4wMi04LjI1Mi4zNzktMTEuOCAxLjAwNy0xMC40NSAxLjg0Ni0xMi4zNDYgNS43MS0xMi4zNDYgMTIuODM3djkuNDExaDI0LjY5M3YzLjEzN0gyOS45NzdjLTcuMTc2IDAtMTMuNDYgNC4zMTMtMTUuNDI2IDEyLjUyMS0yLjI2OCA5LjQwNS0yLjM2OCAxNS4yNzUgMCAyNS4wOTYgMS43NTUgNy4zMTEgNS45NDcgMTIuNTE5IDEzLjEyNCAxMi41MTloOC40OTFWNjcuMjM0YzAtOC4xNTEgNy4wNTEtMTUuMzQgMTUuNDI2LTE1LjM0aDI0LjY2NWM2Ljg2NiAwIDEyLjM0Ni01LjY1NCAxMi4zNDYtMTIuNTQ4VjE1LjgzM2MwLTYuNjkzLTUuNjQ2LTExLjcyLTEyLjM0Ni0xMi44MzctNC4yNDQtLjcwNi04LjY0NS0xLjAyNy0xMi44NjYtMS4wMDh6TTUwLjAzNyA5LjU1N2MyLjU1IDAgNC42MzQgMi4xMTcgNC42MzQgNC43MjEgMCAyLjU5My0yLjA4MyA0LjY5LTQuNjM0IDQuNjktMi41NiAwLTQuNjMzLTIuMDk3LTQuNjMzLTQuNjktLjAwMS0yLjYwNCAyLjA3My00LjcyMSA0LjYzMy00LjcyMXoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMTAuMjYpIi8+PHBhdGggZmlsbD0idXJsKCNweXRob24tb3JpZ2luYWwtYikiIGQ9Ik05MS42ODIgMjguMzh2MTAuOTY2YzAgOC41LTcuMjA4IDE1LjY1NS0xNS40MjYgMTUuNjU1SDUxLjU5MWMtNi43NTYgMC0xMi4zNDYgNS43ODMtMTIuMzQ2IDEyLjU0OXYyMy41MTVjMCA2LjY5MSA1LjgxOCAxMC42MjggMTIuMzQ2IDEyLjU0NyA3LjgxNiAyLjI5NyAxNS4zMTIgMi43MTMgMjQuNjY1IDAgNi4yMTYtMS44MDEgMTIuMzQ2LTUuNDIzIDEyLjM0Ni0xMi41NDd2LTkuNDEySDYzLjkzOHYtMy4xMzhoMzcuMDEyYzcuMTc2IDAgOS44NTItNS4wMDUgMTIuMzQ4LTEyLjUxOSAyLjU3OC03LjczNSAyLjQ2Ny0xNS4xNzQgMC0yNS4wOTYtMS43NzQtNy4xNDUtNS4xNjEtMTIuNTIxLTEyLjM0OC0xMi41MjFoLTkuMjY4ek03Ny44MDkgODcuOTI3YzIuNTYxIDAgNC42MzQgMi4wOTcgNC42MzQgNC42OTIgMCAyLjYwMi0yLjA3NCA0LjcxOS00LjYzNCA0LjcxOS0yLjU1IDAtNC42MzMtMi4xMTctNC42MzMtNC43MTkgMC0yLjU5NSAyLjA4My00LjY5MiA0LjYzMy00LjY5MnoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMTAuMjYpIi8+PHJhZGlhbEdyYWRpZW50IGlkPSJweXRob24tb3JpZ2luYWwtYyIgY3g9IjE4MjUuNjc4IiBjeT0iNDQ0LjQ1IiByPSIyNi43NDMiIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoMCAtLjI0IC0xLjA1NSAwIDUzMi45NzkgNTU3LjU3NikiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNCOEI4QjgiIHN0b3Atb3BhY2l0eT0iLjQ5OCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzdGN0Y3RiIgc3RvcC1vcGFjaXR5PSIwIi8+PC9yYWRpYWxHcmFkaWVudD48cGF0aCBvcGFjaXR5PSIuNDQ0IiBmaWxsPSJ1cmwoI3B5dGhvbi1vcmlnaW5hbC1jKSIgZD0iTTk3LjMwOSAxMTkuNTk3YzAgMy41NDMtMTQuODE2IDYuNDE2LTMzLjA5MSA2LjQxNi0xOC4yNzYgMC0zMy4wOTItMi44NzMtMzMuMDkyLTYuNDE2IDAtMy41NDQgMTQuODE1LTYuNDE3IDMzLjA5Mi02LjQxNyAxOC4yNzUgMCAzMy4wOTEgMi44NzIgMzMuMDkxIDYuNDE3eiIvPjwvc3ZnPgo="></b>Python</li><li class="sk-b"><b class="chip" aria-hidden="true">St</b>Stata</li><li class="sk-b"><b class="chip" aria-hidden="true"><i class="sk-dot"></i></b><span data-i18n="skills.card5.li5">Analyse multivariée (ACP, AFC, ACM)</span></li><li class="sk-b"><b class="chip" aria-hidden="true"><i class="sk-dot"></i></b><span data-i18n="skills.card5.li1">Statistique descriptive et inférentielle</span></li><li class="sk-b"><b class="chip" aria-hidden="true"><i class="sk-dot"></i></b><span data-i18n="skills.card5.li2">Estimation paramétrique</span></li><li class="sk-b"><b class="chip" aria-hidden="true"><i class="sk-dot"></i></b><span data-i18n="skills.card5.li3">Sondages et échantillonnage</span></li><li class="sk-b"><b class="chip" aria-hidden="true"><i class="sk-dot"></i></b><span data-i18n="skills.card5.li4">Séries chronologiques</span></li><li class="sk-b"><b class="chip" aria-hidden="true"><i class="sk-dot"></i></b><span data-i18n="skills.card5.li6">Introduction à l’économétrie</span></li></ul>
           </div>
-          <div class="skill-card">
-            <h3 data-i18n="skills.card1.title">Programmation &amp; outils</h3>
-            <ul>
-              <li data-i18n="skills.card1.li1">R (utilisé dans mes projets)</li>
-              <li data-i18n="skills.card1.li2">Python (bases)</li>
-              <li data-i18n="skills.card1.li3">SQL (bases)</li>
-              <li data-i18n="skills.card1.li4">Stata (notions)</li>
-              <li data-i18n="skills.card1.li5">HTML/CSS, JavaScript, Git &amp; GitHub (bases)</li>
-            </ul>
+          <div class="skill-col">
+            <h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4h6v3H9zM7 5H5v16h14V5h-2M9 12h6M9 16h4"/></svg><span data-i18n="skl.t2">Collecte et gestion des données</span></h3>
+            <ul class="sk-badges"><li class="sk-b"><b class="chip" aria-hidden="true">Ko</b>KoboToolbox</li><li class="sk-b"><b class="chip" aria-hidden="true">GF</b>Google Forms</li><li class="sk-b"><b class="chip" aria-hidden="true">Xl</b>Excel</li><li class="sk-b"><b class="chip" aria-hidden="true"><i class="sk-dot"></i></b><span data-i18n="skills.card4.li2">Conception de questionnaires</span></li><li class="sk-b"><b class="chip" aria-hidden="true"><i class="sk-dot"></i></b><span data-i18n="skl.clean">Nettoyage des bases de données</span></li><li class="sk-b"><b class="chip" aria-hidden="true"><i class="sk-dot"></i></b><span data-i18n="skl.pres">Présentation des résultats</span></li></ul>
           </div>
-          <div class="skill-card">
-            <h3 data-i18n="skills.card4.title">Collecte &amp; communication</h3>
-            <ul>
-              <li data-i18n="skills.card4.li1">KoboToolbox, Google Forms</li>
-              <li data-i18n="skills.card4.li2">Conception de questionnaires</li>
-              <li data-i18n="skills.card4.li3">Préparation et nettoyage des bases de données</li>
-              <li data-i18n="skills.card4.li4">Excel</li>
-              <li data-i18n="skills.card4.li5">Présentation et interprétation des résultats</li>
-              <li data-i18n="skills.card4.li6">Rédaction de rapports (LaTeX)</li>
-            </ul>
+          <div class="skill-col">
+            <h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></svg><span data-i18n="skl.t3">Web et outils numériques</span></h3>
+            <ul class="sk-badges"><li class="sk-b"><b class="chip" aria-hidden="true"><img alt="" width="16" height="16" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij48cGF0aCBmaWxsPSIjRTQ0RDI2IiBkPSJNMTkuMDM3IDExMy44NzZMOS4wMzIgMS42NjFoMTA5LjkzNmwtMTAuMDE2IDExMi4xOTgtNDUuMDE5IDEyLjQ4eiIvPjxwYXRoIGZpbGw9IiNGMTY1MjkiIGQ9Ik02NCAxMTYuOGwzNi4zNzgtMTAuMDg2IDguNTU5LTk1Ljg3OEg2NHoiLz48cGF0aCBmaWxsPSIjRUJFQkVCIiBkPSJNNjQgNTIuNDU1SDQ1Ljc4OEw0NC41MyAzOC4zNjFINjRWMjQuNTk5SDI5LjQ4OWwuMzMgMy42OTIgMy4zODIgMzcuOTI3SDY0em0wIDM1Ljc0M2wtLjA2MS4wMTctMTUuMzI3LTQuMTQtLjk3OS0xMC45NzVIMzMuODE2bDEuOTI4IDIxLjYwOSAyOC4xOTMgNy44MjYuMDYzLS4wMTd6Ii8+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTYzLjk1MiA1Mi40NTV2MTMuNzYzaDE2Ljk0N2wtMS41OTcgMTcuODQ5LTE1LjM1IDQuMTQzdjE0LjMxOWwyOC4yMTUtNy44Mi4yMDctMi4zMjUgMy4yMzQtMzYuMjMzLjMzNS0zLjY5NmgtMy43MDh6bTAtMjcuODU2djEzLjc2MmgzMy4yNDRsLjI3Ni0zLjA5Mi42MjgtNi45NzguMzI5LTMuNjkyeiIvPjwvc3ZnPg=="></b>HTML</li><li class="sk-b"><b class="chip" aria-hidden="true"><img alt="" width="16" height="16" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij48cGF0aCBmaWxsPSIjMTU3MkI2IiBkPSJNMTguODE0IDExNC4xMjNMOC43NiAxLjM1MmgxMTAuNDhsLTEwLjA2NCAxMTIuNzU0LTQ1LjI0MyAxMi41NDMtNDUuMTE5LTEyLjUyNnoiLz48cGF0aCBmaWxsPSIjMzNBOURDIiBkPSJNNjQuMDAxIDExNy4wNjJsMzYuNTU5LTEwLjEzNiA4LjYwMS05Ni4zNTRoLTQ1LjE2djEwNi40OXoiLz48cGF0aCBmaWxsPSIjZmZmIiBkPSJNNjQuMDAxIDUxLjQyOWgxOC4zMDJsMS4yNjQtMTQuMTYzSDY0LjAwMVYyMy40MzVoMzQuNjgybC0uMzMyIDMuNzExLTMuNCAzOC4xMTRoLTMwLjk1VjUxLjQyOXoiLz48cGF0aCBmaWxsPSIjRUJFQkVCIiBkPSJNNjQuMDgzIDg3LjM0OWwtLjA2MS4wMTgtMTUuNDAzLTQuMTU5LS45ODUtMTEuMDMxSDMzLjc1MmwxLjkzNyAyMS43MTcgMjguMzMxIDcuODYzLjA2My0uMDE4di0xNC4zOXoiLz48cGF0aCBmaWxsPSIjZmZmIiBkPSJNODEuMTI3IDY0LjY3NWwtMS42NjYgMTguNTIyLTE1LjQyNiA0LjE2NHYxNC4zOWwyOC4zNTQtNy44NTguMjA4LTIuMzM3IDIuNDA2LTI2Ljg4MUg4MS4xMjd6Ii8+PHBhdGggZmlsbD0iI0VCRUJFQiIgZD0iTTY0LjA0OCAyMy40MzV2MTMuODMxSDMwLjY0bC0uMjc3LTMuMTA4LS42My03LjAxMi0uMzMxLTMuNzExaDM0LjY0NnptLS4wNDcgMjcuOTk2djEzLjgzMUg0OC43OTJsLS4yNzctMy4xMDgtLjYzMS03LjAxMi0uMzMtMy43MTFoMTYuNDQ3eiIvPjwvc3ZnPg=="></b>CSS</li><li class="sk-b"><b class="chip" aria-hidden="true"><img alt="" width="16" height="16" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij48cGF0aCBmaWxsPSIjRjBEQjRGIiBkPSJNMS40MDggMS40MDhoMTI1LjE4NHYxMjUuMTg1SDEuNDA4eiIvPjxwYXRoIGZpbGw9IiMzMjMzMzAiIGQ9Ik0xMTYuMzQ3IDk2LjczNmMtLjkxNy01LjcxMS00LjY0MS0xMC41MDgtMTUuNjcyLTE0Ljk4MS0zLjgzMi0xLjc2MS04LjEwNC0zLjAyMi05LjM3Ny01LjkyNi0uNDUyLTEuNjktLjUxMi0yLjY0Mi0uMjI2LTMuNjY1LjgyMS0zLjMyIDQuNzg0LTQuMzU1IDcuOTI1LTMuNDAzIDIuMDIzLjY3OCAzLjkzOCAyLjIzNyA1LjA5MyA0LjcyNCA1LjQwMi0zLjQ5OCA1LjM5MS0zLjQ3NSA5LjE2My01Ljg3OS0xLjM4MS0yLjE0MS0yLjExOC0zLjEyOS0zLjAyMi00LjA0NS0zLjI0OS0zLjYyOS03LjY3Ni01LjQ5OC0xNC43NTYtNS4zNTVsLTMuNjg4LjQ3N2MtMy41MzQuODkzLTYuOTAyIDIuNzQ4LTguODc3IDUuMjM1LTUuOTI2IDYuNzI0LTQuMjM2IDE4LjQ5MiAyLjk3NSAyMy4zMzUgNy4xMDQgNS4zMzIgMTcuNTQgNi41NDUgMTguODczIDExLjUzMSAxLjI5NyA2LjEwNC00LjQ4NiA4LjA4LTEwLjIzNCA3LjM3OC00LjIzNi0uODgxLTYuNTkyLTMuMDM0LTkuMTM5LTYuOTQ5LTQuNjg4IDIuNzEzLTQuNjg4IDIuNzEzLTkuNTA4IDUuNDg1IDEuMTQzIDIuNDk5IDIuMzQ0IDMuNjMgNC4yNiA1Ljc5NSA5LjA2OCA5LjE5OCAzMS43NiA4Ljc0NiAzNS44My01LjE3Ni4xNjUtLjQ3OCAxLjI2MS0zLjY2Ni4zOC04LjU4MXpNNjkuNDYyIDU4Ljk0M0g1Ny43NTNsLS4wNDggMzAuMjcyYzAgNi40MzguMzMzIDEyLjM0LS43MTQgMTQuMTQ5LTEuNzEzIDMuNTU4LTYuMTUyIDMuMTE3LTguMTc1IDIuNDI3LTIuMDU5LTEuMDEyLTMuMTA2LTIuNDUxLTQuMzE5LTQuNDg1LS4zMzMtLjU4NC0uNTgzLTEuMDM2LS42NjctMS4wNzFsLTkuNTIgNS44M2MxLjU4MyAzLjI0OSAzLjkxNSA2LjA2OSA2LjkwMiA3LjkwMSA0LjQ2MiAyLjY3OCAxMC40NTkgMy40OTkgMTYuNzMxIDIuMDU5IDQuMDgyLTEuMTg5IDcuNjA0LTMuNjUyIDkuNDQ4LTcuNDAxIDIuNjY2LTQuOTE1IDIuMDk0LTEwLjg2NCAyLjA3LTE3LjQ0NC4wNi0xMC43MzUuMDAxLTIxLjQ2OC4wMDEtMzIuMjM3eiIvPjwvc3ZnPg=="></b>JavaScript</li><li class="sk-b"><b class="chip" aria-hidden="true"><img alt="" width="16" height="16" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij48cGF0aCBmaWxsPSIjRjM0RjI5IiBkPSJNMTI0LjczNyA1OC4zNzhMNjkuNjIxIDMuMjY0Yy0zLjE3Mi0zLjE3NC04LjMyLTMuMTc0LTExLjQ5NyAwTDQ2LjY4IDE0LjcxbDE0LjUxOCAxNC41MThjMy4zNzUtMS4xMzkgNy4yNDMtLjM3NSA5LjkzMiAyLjMxNCAyLjcwMyAyLjcwNiAzLjQ2MSA2LjYwNyAyLjI5NCA5Ljk5M2wxMy45OTIgMTMuOTkzYzMuMzg1LTEuMTY3IDcuMjkyLS40MTMgOS45OTQgMi4yOTUgMy43OCAzLjc3NyAzLjc4IDkuOSAwIDEzLjY3OWE5LjY3MyA5LjY3MyAwIDAxLTEzLjY4MyAwIDkuNjc3IDkuNjc3IDAgMDEtMi4xMDUtMTAuNTIxTDY4LjU3NCA0Ny45MzNsLS4wMDIgMzQuMzQxYTkuNzA4IDkuNzA4IDAgMDEyLjU1OSAxLjgyOGMzLjc3OCAzLjc3NyAzLjc3OCA5Ljg5OCAwIDEzLjY4My0zLjc3OSAzLjc3Ny05LjkwNCAzLjc3Ny0xMy42NzkgMC0zLjc3OC0zLjc4NC0zLjc3OC05LjkwNSAwLTEzLjY4M2E5LjY1IDkuNjUgMCAwMTMuMTY3LTIuMTFWNDcuMzMzYTkuNTgxIDkuNTgxIDAgMDEtMy4xNjctMi4xMTFjLTIuODYyLTIuODYtMy41NTEtNy4wNi0yLjA4My0xMC41NzZMNDEuMDU2IDIwLjMzMyAzLjI2NCA1OC4xMjNhOC4xMzMgOC4xMzMgMCAwMDAgMTEuNWw1NS4xMTcgNTUuMTE0YzMuMTc0IDMuMTc0IDguMzIgMy4xNzQgMTEuNDk5IDBsNTQuODU4LTU0Ljg1OGE4LjEzNSA4LjEzNSAwIDAwLS4wMDEtMTEuNTAxeiIvPjwvc3ZnPg=="></b>Git &amp; GitHub</li><li class="sk-b"><b class="chip" aria-hidden="true">Tx</b>LaTeX</li></ul>
           </div>
-          <div class="skill-card">
-            <h3 data-i18n="skills.card3.title">En cours d’apprentissage</h3>
-            <ul>
-              <li data-i18n="skills.card3.li1">Initiation au Machine Learning</li>
-              <li data-i18n="skills.card3.li2">Visualisation avancée des données</li>
-              <li data-i18n="skills.card3.li3">Power BI</li>
-              <li data-i18n="skills.card3.li4">Développement web (formation en cours)</li>
-            </ul>
-          </div>
+        </div>
+        <div class="skills-learning">
+          <h3 data-i18n="skills.card3.title">En cours d’apprentissage</h3>
+          <ul class="sk-badges sk-center-badges"><li class="sk-b learn"><b class="chip" aria-hidden="true"><i class="sk-dot"></i></b><span data-i18n="skl.ml">Machine Learning (initiation)</span></li><li class="sk-b learn"><b class="chip" aria-hidden="true">BI</b>Power BI</li><li class="sk-b learn"><b class="chip" aria-hidden="true"><i class="sk-dot"></i></b><span data-i18n="skl.viz">Visualisation avancée</span></li><li class="sk-b learn"><b class="chip" aria-hidden="true"><i class="sk-dot"></i></b><span data-i18n="skl.web">Développement web</span></li></ul>
         </div>
         <p class="skills-note" data-i18n="skills.note">Mes compétences évoluent au fil de mes apprentissages et de mes expériences pratiques.</p>
       </div>
     </section>
 
     <!-- FORMATION -->
-    <section id="education" data-section="education" class="section-dark">
+    <!-- SERVICES -->
+    <section id="services" data-section="services" class="section-dark">
+      <div class="container">
+        <div class="section-label" data-i18n="svc.label">Services</div>
+        <h2 class="section-title" data-i18n="svc.title">Ce que je peux réaliser</h2>
+        <div class="services-grid">
+          <article class="service-card"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg><h3 data-i18n="svc.1.t">Analyse statistique et exploratoire</h3><p data-i18n="svc.1.d">Statistiques descriptives, analyse multivariée et lecture claire des résultats.</p></article>
+          <article class="service-card"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4h6v3H9zM7 5H5v16h14V5h-2M9 12h6M9 16h4"/></svg><h3 data-i18n="svc.2.t">Collecte et questionnaires</h3><p data-i18n="svc.2.d">Conception de questionnaires et collecte avec KoboToolbox ou Google Forms.</p></article>
+          <article class="service-card"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/></svg><h3 data-i18n="svc.3.t">Nettoyage et préparation des bases</h3><p data-i18n="svc.3.d">Vérification et structuration de bases de données prêtes à être analysées.</p></article>
+          <article class="service-card"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l5-6 4 4 8-9M3 21h18"/></svg><h3 data-i18n="svc.4.t">Visualisation et présentation</h3><p data-i18n="svc.4.d">Tableaux et graphiques (R, Python, Excel), présentés dans un rapport clair.</p></article>
+          <article class="service-card"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></svg><h3 data-i18n="svc.5.t">Développement web</h3><p data-i18n="svc.5.d">Pages web simples en HTML, CSS et JavaScript, en cours de perfectionnement.</p></article>
+        </div>
+        <p class="services-note" data-i18n="svc.note">Étudiant en Licence 2, je privilégie des missions adaptées à mon niveau, avec un cadre clair.</p>
+      </div>
+    </section>
+
+    <section id="education" data-section="education">
       <div class="container">
         <div class="section-label" data-i18n="education.label">Parcours</div>
         <h2 class="section-title" data-i18n="education.title">Formation</h2>
@@ -1291,7 +1348,6 @@
                 <li><strong data-i18n="projects.m3.value">× 2,7</strong><span data-i18n="projects.m3.label">dépense médiane : profil le plus aisé vs le moins aisé</span></li>
               </ul>
               <ul class="project-tags"><li>R</li><li data-i18n="projects.p1.tag2">ACM</li><li>HCPC</li></ul>
-              <p class="project-note" data-i18n="projects.p1.note">Analyse descriptive. Source : EHCVM Bénin 2018-2019 (INSAE, Banque mondiale).</p>
               <div class="project-links">
                 <a href="https://github.com/tamegnon-venud/projet-menages-benin" target="_blank" rel="noopener"><span data-i18n="projects.p1.code">Voir le code</span><svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
                 <a href="https://github.com/tamegnon-venud/projet-menages-benin/blob/main/report/rapport_profils_menages_benin.pdf" target="_blank" rel="noopener"><span data-i18n="projects.p1.report">Lire le rapport (PDF)</span><svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
@@ -1331,7 +1387,6 @@
 
         <div class="contact-grid">
           <div class="contact-info">
-            <p class="pill contact-avail" data-i18n="contact.avail">Disponible · stage, freelance, collaborations</p>
             <h3 data-i18n="contact.subtitle">Échangeons</h3>
             <p class="contact-intro" data-i18n="contact.intro">Je suis ouvert aux opportunités : stage, missions freelance, collaborations et projets en analyse de données. Je me forme aussi au développement web. Une question ou une idée ? Écrivez-moi.</p>
             <div class="contact-item">
@@ -1462,7 +1517,34 @@
       };
 
       const translations = {
+          'skl.web': 'Développement web',
+          'skl.viz': 'Visualisation avancée',
+          'skl.ml': 'Machine Learning (initiation)',
+          'skl.pres': 'Présentation des résultats',
+          'skl.clean': 'Nettoyage des bases de données',
         fr: {
+          'skills.sub': 'Technologies et outils que j’utilise ou que j’apprends',
+          'skl.t1': 'Données et statistique',
+          'skl.t2': 'Collecte et gestion des données',
+          'skl.t3': 'Web et outils numériques',
+          'lv.used': 'pratique',
+          'lv.basic': 'bases',
+          'lv.learn': 'en cours',
+          'lv.legend': 'Repères : pratique = utilisé en situation réelle · bases = notions acquises · en cours = apprentissage en cours.',
+          'nav.services': 'Services',
+          'svc.label': 'Services',
+          'svc.title': 'Ce que je peux réaliser',
+          'svc.note': 'Étudiant en Licence 2, je privilégie des missions adaptées à mon niveau, avec un cadre clair.',
+          'svc.1.t': 'Analyse statistique et exploratoire',
+          'svc.1.d': 'Statistiques descriptives, analyse multivariée et lecture claire des résultats.',
+          'svc.2.t': 'Collecte et questionnaires',
+          'svc.2.d': 'Conception de questionnaires et collecte avec KoboToolbox ou Google Forms.',
+          'svc.3.t': 'Nettoyage et préparation des bases',
+          'svc.3.d': 'Vérification et structuration de bases de données prêtes à être analysées.',
+          'svc.4.t': 'Visualisation et présentation',
+          'svc.4.d': 'Tableaux et graphiques (R, Python, Excel), présentés dans un rapport clair.',
+          'svc.5.t': 'Développement web',
+          'svc.5.d': 'Pages web simples en HTML, CSS et JavaScript, en cours de perfectionnement.',
           'nav.about': 'À propos',
           'nav.skills': 'Compétences',
           'nav.education': 'Formation',
@@ -1479,16 +1561,16 @@
           'form.nameLabel': 'Nom',
           'form.emailLabel': 'Email',
           'form.messageLabel': 'Message',
-          'hero.role': 'Étudiant en Statistique Appliquée · Analyse de données · Développement web',
-          'hero.text': 'Je collecte, nettoie et analyse des données avec R et Python (sondages, analyse multivariée, séries chronologiques).',
+          'hero.role': 'Étudiant en Statistique Appliquée · Données · Développement web · Numérique',
+          'hero.text': 'Passionné par le numérique sous toutes ses formes : j’analyse des données, je conçois des outils web et je transforme des idées en solutions utiles.',
           'hero.cv': 'Télécharger mon CV',
           'hero.contact': 'Me contacter',
           'about.label': 'Profil',
           'about.title': 'À propos',
-          'about.p1': 'Étudiant en <strong>deuxième année de Licence en Statistique Appliquée</strong> à l’Université de Parakou (Bénin). Je me forme à la <strong>collecte, au traitement et à l’analyse de données</strong>, avec <strong>R, Python, SQL et Excel</strong>. Je développe aussi des sites web (HTML, CSS, JavaScript).',
+          'about.p1': 'Étudiant en <strong>deuxième année de Licence en Statistique Appliquée</strong> à l’Université de Parakou (Bénin). Je me forme à la <strong>collecte, au traitement et à l’analyse de données</strong>, avec <strong>R, Python et Excel</strong>. Je développe aussi des sites web (HTML, CSS, JavaScript).',
           'about.p2': 'Je suis disponible et ouvert aux opportunités : <strong>stage</strong>, <strong>missions freelance</strong> et collaborations, en analyse de données, en collecte d’enquêtes ou en développement web. À terme, je souhaite devenir <strong>Data Analyst</strong>, puis évoluer vers la Data Science. Je m’attache aussi à savoir expliquer ce que les résultats signifient, y compris à des personnes qui ne sont pas statisticiennes.',
           'skills.label': 'Savoir-faire',
-          'skills.title': 'Compétences',
+          'skills.title': 'Mes <span>compétences</span>',
           'skills.card5.title': 'Méthodes statistiques',
           'skills.card5.li1': 'Statistique descriptive et inférentielle',
           'skills.card5.li2': 'Estimation paramétrique',
@@ -1499,7 +1581,6 @@
           'skills.card1.title': 'Programmation & outils',
           'skills.card1.li1': 'R (utilisé dans mes projets)',
           'skills.card1.li2': 'Python (bases)',
-          'skills.card1.li3': 'SQL (bases)',
           'skills.card1.li4': 'Stata (notions)',
           'skills.card1.li5': 'HTML/CSS, JavaScript, Git & GitHub (bases)',
           'skills.card4.title': 'Collecte & communication',
@@ -1567,6 +1648,33 @@
           'footer.text': '© ' + new Date().getFullYear() + ' Sètondji Venud TAMEGNON. Statistique appliquée et analyse de données.'
         },
         en: {
+          'skl.web': 'Web development',
+          'skl.viz': 'Advanced visualisation',
+          'skl.ml': 'Machine Learning (introduction)',
+          'skl.pres': 'Presenting results',
+          'skl.clean': 'Data cleaning',
+          'skills.sub': 'Technologies and tools I use or am learning',
+          'skl.t1': 'Data and statistics',
+          'skl.t2': 'Data collection and management',
+          'skl.t3': 'Web and digital tools',
+          'lv.used': 'hands-on',
+          'lv.basic': 'basics',
+          'lv.learn': 'learning',
+          'lv.legend': 'Key: hands-on = used in real work · basics = foundations acquired · learning = currently learning.',
+          'nav.services': 'Services',
+          'svc.label': 'Services',
+          'svc.title': 'What I can deliver',
+          'svc.note': 'As a second-year student, I favour assignments suited to my level, with a clear scope.',
+          'svc.1.t': 'Statistical and exploratory analysis',
+          'svc.1.d': 'Descriptive statistics, multivariate analysis and clear reading of the results.',
+          'svc.2.t': 'Data collection and questionnaires',
+          'svc.2.d': 'Questionnaire design and collection with KoboToolbox or Google Forms.',
+          'svc.3.t': 'Data cleaning and preparation',
+          'svc.3.d': 'Checking and structuring datasets so they are ready to analyse.',
+          'svc.4.t': 'Visualisation and reporting',
+          'svc.4.d': 'Tables and charts (R, Python, Excel), presented in a clear report.',
+          'svc.5.t': 'Web development',
+          'svc.5.d': 'Simple web pages in HTML, CSS and JavaScript, still improving.',
           'nav.about': 'About',
           'nav.skills': 'Skills',
           'nav.education': 'Education',
@@ -1583,16 +1691,16 @@
           'form.nameLabel': 'Name',
           'form.emailLabel': 'Email',
           'form.messageLabel': 'Message',
-          'hero.role': 'Applied Statistics Student · Data Analysis · Web Development',
-          'hero.text': 'I collect, clean and analyze data with R and Python (surveys, multivariate analysis, time series).',
+          'hero.role': 'Applied Statistics Student · Data · Web Development · Digital',
+          'hero.text': 'Passionate about all things digital: I analyze data, build web tools and turn ideas into useful solutions.',
           'hero.cv': 'Download my CV',
           'hero.contact': 'Contact me',
           'about.label': 'Profile',
           'about.title': 'About',
-          'about.p1': 'I am a <strong>second-year Applied Statistics</strong> student at the University of Parakou (Benin). I am training in <strong>data collection, processing and analysis</strong>, using <strong>R, Python, SQL and Excel</strong>. I also build websites (HTML, CSS, JavaScript).',
+          'about.p1': 'I am a <strong>second-year Applied Statistics</strong> student at the University of Parakou (Benin). I am training in <strong>data collection, processing and analysis</strong>, using <strong>R, Python and Excel</strong>. I also build websites (HTML, CSS, JavaScript).',
           'about.p2': 'I am available and open to opportunities: an <strong>internship</strong>, <strong>freelance work</strong> and collaborations in data analysis, survey data collection or web development. In the longer term, I aim to become a <strong>Data Analyst</strong> and then move into Data Science. I also work on explaining what results mean, including to non-statisticians.',
           'skills.label': 'Toolkit',
-          'skills.title': 'Skills',
+          'skills.title': 'My <span>skills</span>',
           'skills.card5.title': 'Statistical Methods',
           'skills.card5.li1': 'Descriptive and inferential statistics',
           'skills.card5.li2': 'Parametric estimation',
@@ -1603,7 +1711,6 @@
           'skills.card1.title': 'Programming & Tools',
           'skills.card1.li1': 'R (used in my projects)',
           'skills.card1.li2': 'Python (basics)',
-          'skills.card1.li3': 'SQL (basics)',
           'skills.card1.li4': 'Stata (familiar)',
           'skills.card1.li5': 'HTML/CSS, JavaScript, Git & GitHub (basics)',
           'skills.card4.title': 'Collection & Communication',
@@ -1678,12 +1785,12 @@
       };
 
       const titles = {
-        fr: 'Sètondji Venud TAMEGNON | Statistique Appliquée & Analyse de données',
-        en: 'Sètondji Venud TAMEGNON | Applied Statistics & Data Analysis'
+        fr: 'Sètondji Venud TAMEGNON | Statistique appliquée, données & numérique',
+        en: 'Sètondji Venud TAMEGNON | Applied Statistics, Data & Digital'
       };
       const descriptions = {
-        fr: 'Sètondji Venud Tamegnon, étudiant en Licence 2 de Statistique Appliquée (Université de Parakou, Bénin). Analyse de données avec R, Python, SQL et Excel, développement web ; sondages, analyse multivariée, séries chronologiques. Compétences, formation et contact.',
-        en: 'Sètondji Venud Tamegnon, second-year Applied Statistics student at the University of Parakou (Benin). Data analysis with R, Python, SQL and Excel, web development; sampling, multivariate analysis, time series. Skills, education and contact.'
+        fr: 'Sètondji Venud Tamegnon, étudiant en Licence 2 de Statistique Appliquée (Université de Parakou, Bénin). Analyse de données avec R, Python et Excel, développement web ; sondages, analyse multivariée, séries chronologiques. Compétences, formation et contact.',
+        en: 'Sètondji Venud Tamegnon, second-year Applied Statistics student at the University of Parakou (Benin). Data analysis with R, Python and Excel, web development; sampling, multivariate analysis, time series. Skills, education and contact.'
       };
 
       const statusEl = document.getElementById('formStatus');
@@ -1696,8 +1803,8 @@
 
       // Ancres de section : #about en anglais, #apropos en français
       const anchors = {
-        fr: { about: 'apropos', skills: 'competences', education: 'formation', projects: 'projets', contact: 'contact' },
-        en: { about: 'about', skills: 'skills', education: 'education', projects: 'projects', contact: 'contact' }
+        fr: { about: 'apropos', skills: 'competences', education: 'formation', projects: 'projets', contact: 'contact', services: 'services' },
+        en: { about: 'about', skills: 'skills', education: 'education', projects: 'projects', contact: 'contact', services: 'services' }
       };
 
       function currentHash() {
@@ -1899,6 +2006,23 @@
       function t() { b.classList.toggle('show', window.scrollY > 300); }
       window.addEventListener('scroll', t, { passive: true });
       t();
+    })();
+  </script>
+  <script>
+    // Salutation selon l'heure locale du visiteur et la langue choisie
+    (function () {
+      var el = document.getElementById('greet');
+      if (!el) return;
+      function greet() {
+        var h = new Date().getHours();
+        var en = document.documentElement.lang === 'en';
+        var txt;
+        if (en) txt = (h >= 5 && h < 12 ? 'Good morning' : h >= 12 && h < 18 ? 'Good afternoon' : 'Good evening') + ', I\u2019m';
+        else txt = (h >= 5 && h < 18 ? 'Bonjour' : 'Bonsoir') + ', je suis';
+        el.textContent = txt;
+      }
+      document.addEventListener('langchange', greet);
+      greet();
     })();
   </script>
 </body>

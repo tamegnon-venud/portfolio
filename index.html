@@ -56,7 +56,7 @@
       var t = null;
       try { t = localStorage.getItem('venud-portfolio-theme'); } catch (e) {}
       if (t !== 'light' && t !== 'dark') {
-        t = window.matchMedia && matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        t = 'dark';
       }
       document.documentElement.setAttribute('data-theme', t);
     })();
@@ -144,6 +144,7 @@
       html { scroll-behavior: smooth; }
     }
     section[id] { scroll-margin-top: 72px; }
+    main { scroll-margin-top: 64px; }
 
     .sr-only {
       position: absolute;
@@ -277,6 +278,8 @@
       border: none;
       color: var(--text);
       font-size: 1.4rem;
+      width: 40px;
+      height: 40px;
       cursor: pointer;
     }
 
@@ -331,7 +334,7 @@
       cursor: pointer;
       color: var(--muted);
       transition: color 0.2s;
-      padding: 4px 2px;
+      padding: 8px 6px;
       font: inherit;
     }
     .lang-switch:hover,
@@ -416,7 +419,7 @@
     .hero {
       padding: 70px 0 60px;
       display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+      grid-template-columns: minmax(0, 1fr);
       gap: 48px;
       align-items: center;
     }
@@ -738,86 +741,99 @@
       max-width: 62ch;
     }
 
-    /* Projets */
+    /* Projets : cartes en grille (visuel en haut, catégorie, titre, texte, tags) ; une carte ne prend qu'une colonne */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 360px));
+      gap: 24px;
     }
     .project-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--card-shadow);
-      padding: 22px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: var(--card-shadow);
+      overflow: hidden;
       transition: border-color 0.2s;
     }
     .project-card:hover { border-color: rgba(var(--accent-rgb), 0.4); }
-    .project-stack {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      color: var(--accent);
-      text-transform: uppercase;
+    .project-visual {
+      height: 150px;
+      background: rgba(var(--accent-rgb), 0.1);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    /* carte-compacte */
-    .projects-grid .project-card:only-child { grid-column: 1 / -1; max-width: 740px; padding: 20px 22px; }
-    .project-card p { max-width: 72ch; }
-    .project-metrics {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-      gap: 8px;
-      margin: 2px 0;
+    .project-visual svg { width: 150px; height: 100px; }
+    .project-visual--cert { height: 110px; }
+    .project-visual--cert svg { width: 56px; height: 56px; }
+    .cert-lines { list-style: none; border-top: 1px solid var(--border); }
+    .cert-lines li {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.92rem;
+      color: var(--text);
     }
-    .metric {
+    .cert-lines li { flex-wrap: wrap; }
+    .cert-right { display: inline-flex; align-items: baseline; gap: 14px; }
+    .cert-lines a { color: var(--accent); font-weight: 600; font-size: 0.85rem; border-bottom: 1px solid transparent; }
+    .cert-lines a:hover { border-bottom-color: var(--accent); }
+    .cert-lines time { font-size: 0.82rem; color: var(--muted); white-space: nowrap; }
+    .project-body {
       display: flex;
       flex-direction: column;
-      gap: 1px;
-      padding: 9px 12px;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      background: var(--bg2);
+      gap: 12px;
+      padding: 22px 24px 24px;
+      flex: 1;
     }
-    .metric strong {
-      font-family: var(--head);
-      font-size: 1.3rem;
-      line-height: 1.1;
+    .project-kind {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
       color: var(--accent);
     }
-    .metric span { font-size: 0.75rem; line-height: 1.3; color: var(--muted); }
-    .project-card p.project-note { font-size: 0.82rem; flex-grow: 0; }
-    .project-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px; }
-    .project-card h3 {
+    .project-card h3 { font-family: var(--head); font-size: 1.25rem; font-weight: 600; line-height: 1.3; }
+    .project-card p { color: var(--muted); font-size: 0.97rem; }
+    .project-card p.project-note { font-size: 0.8rem; }
+    .project-facts { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+    .project-facts li { font-size: 0.92rem; color: var(--muted); }
+    .project-facts strong {
       font-family: var(--head);
       font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-right: 6px;
+    }
+    .project-tags { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
+    .project-tags li {
+      font-size: 0.75rem;
       font-weight: 600;
+      line-height: 1;
+      padding: 7px 12px;
+      border-radius: 999px;
+      color: var(--accent);
+      border: 1px solid rgba(var(--accent-rgb), 0.3);
+      background: rgba(var(--accent-rgb), 0.08);
     }
-    .project-card p {
-      color: var(--muted);
-      font-size: 0.9rem;
-      flex-grow: 1;
-    }
-    .status {
+    .project-links { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: auto; padding-top: 4px; }
+    .project-links a {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-size: 0.78rem;
-      color: var(--muted);
-      background: var(--soft2);
-      padding: 4px 10px;
-      border-radius: 999px;
-      width: fit-content;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--accent);
+      border-bottom: 1px solid transparent;
     }
-    .status::before {
-      content: "";
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: #F59E0B;
-    }
+    .project-links a:hover { border-bottom-color: var(--accent); }
+    .project-links .btn-icon { width: 15px; height: 15px; }
 
     /* Contact */
     .contact-grid {
@@ -839,7 +855,27 @@
       color: var(--muted);
       font-size: 0.95rem;
     }
+    .contact-info h3 { font-family: var(--head); font-size: 1.6rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 14px; }
+    .contact-item { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; }
+    .contact-icon {
+      width: 46px;
+      height: 46px;
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      border: 1px solid rgba(var(--accent-rgb), 0.3);
+      background: rgba(var(--accent-rgb), 0.08);
+    }
+    .contact-text { display: flex; flex-direction: column; min-width: 0; line-height: 1.4; }
+    .contact-label { font-size: 0.85rem; color: var(--muted); }
+    .contact-text a, .contact-value { font-size: 1.02rem; font-weight: 500; color: var(--text); }
+    .contact-text a:hover { color: var(--accent); }
     .contact-item a:hover { color: var(--accent); }
+    .contact-item a, .contact-item span { min-width: 0; overflow-wrap: anywhere; }
+    .contact-item--spaced { margin-top: 16px; }
+    .contact-item a.contact-link { color: var(--accent); }
     .contact-item svg {
       width: 18px;
       height: 18px;
@@ -903,6 +939,10 @@
       cursor: pointer;
     }
 
+    @media (prefers-reduced-motion: reduce) {
+      .to-top, .nav-links a::after, .lang-switch svg.chevron { transition: none; }
+    }
+
     /* Footer */
     footer {
       border-top: 1px solid var(--border);
@@ -945,7 +985,7 @@
     .to-top.show { opacity: 1; visibility: visible; transform: none; }
     .to-top:hover,
     .to-top:focus-visible {
-      color: #fff;
+      color: var(--on-accent);
       background: var(--accent);
       border-color: var(--accent);
       transform: translateY(-3px);
@@ -979,8 +1019,7 @@
 
       .edu-row { grid-template-columns: 1fr; gap: 10px; padding: 22px 0; }
       .edu-when { flex-direction: row; align-items: center; gap: 12px; }
-      .skills-grid,
-      .projects-grid {
+      .skills-grid {
         grid-template-columns: 1fr;
       }
       .contact-grid {
@@ -1000,6 +1039,7 @@
         border-bottom: 1px solid var(--border);
         padding: 18px 24px;
         gap: 14px;
+        box-shadow: var(--shadow-menu);
       }
       .menu-btn { display: block; }
     }
@@ -1053,7 +1093,7 @@
     <div class="container nav">
       <a href="#top" class="logo" aria-label="Sètondji Venud TAMEGNON"><span class="logo-mark" aria-hidden="true">VT</span><span class="logo-name">Venud <span>TAMEGNON</span></span></a>
       <div class="nav-right">
-        <nav class="nav-links" id="navLinks">
+        <nav class="nav-links" id="navLinks" aria-label="Navigation principale" data-i18n-aria-label="nav.main">
           <a href="#about" data-nav="about" data-i18n="nav.about">À propos</a>
           <a href="#skills" data-nav="skills" data-i18n="nav.skills">Compétences</a>
           <a href="#education" data-nav="education" data-i18n="nav.education">Formation</a>
@@ -1095,7 +1135,7 @@
           <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
           <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
         </button>
-        <button class="menu-btn" id="menuBtn" aria-label="Menu" data-i18n-aria-label="nav.menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+        <button type="button" class="menu-btn" id="menuBtn" aria-label="Menu" data-i18n-aria-label="nav.menu" aria-expanded="false" aria-controls="navLinks">☰</button>
       </div>
     </div>
   </header>
@@ -1108,35 +1148,18 @@
         <p class="hero-avail pill" data-i18n="hero.avail">Disponible pour un stage</p>
         <h1>Sètondji Venud <span>TAMEGNON</span></h1>
         <p class="hero-role" data-i18n="hero.role">Étudiant en Statistique Appliquée · Analyse de données</p>
-        <p class="hero-text" data-i18n="hero.text">Passionné par l’analyse de données et le développement web, je transforme des chiffres bruts en informations claires pour mieux décider.</p>
+        <p class="hero-text" data-i18n="hero.text">Je collecte, nettoie et analyse des données avec R et Python (sondages, analyse multivariée, séries chronologiques).</p>
         <div class="hero-actions">
           <a href="CV_Venud_Tamegnon_FR.pdf" data-cv-fr="CV_Venud_Tamegnon_FR.pdf" data-cv-en="CV_Venud_Tamegnon_EN.pdf" class="btn btn-primary btn-download" download><svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg><span data-i18n="hero.cv">Télécharger mon CV</span></a>
-          <a href="#projects" data-anchor="projects" class="btn btn-ghost"><span data-i18n="hero.projects">Voir mes projets</span></a>
           <a href="#contact" class="btn btn-ghost btn-arrow"><span data-i18n="hero.contact">Me contacter</span><svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
         </div>
         <div class="social">
           <a href="https://linkedin.com/in/venud-tamegnon-61b8183b2" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           </a>
-          <a href="mailto:tamegnonvenud@gmail.com" aria-label="Email" title="Email">
-            <svg class="stroke" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </a>
-          <a href="https://wa.me/2290141617337" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          </a>
           <a href="https://github.com/tamegnon-venud" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
           </a>
-        </div>
-      </div>
-
-      <div class="hero-photo-wrap">
-        <div class="hero-photo">
-          <img src="photo.jpg" alt="Photo de Sètondji Venud Tamegnon" data-i18n-alt="hero.photoAlt" width="800" height="1067" decoding="async" fetchpriority="high" />
-        </div>
-        <div class="photo-meta">
-          <strong>Sètondji Venud TAMEGNON</strong>
-          <span data-i18n="loc">Parakou, Bénin</span>
         </div>
       </div>
     </section>
@@ -1147,8 +1170,8 @@
         <div class="section-label" data-i18n="about.label">Profil</div>
         <h2 class="section-title" data-i18n="about.title">À propos</h2>
         <div class="about-text">
-          <p data-i18n="about.p1">Je suis <strong>Sètondji Venud TAMEGNON</strong>, étudiant en <strong>deuxième année de Licence en Statistique Appliquée</strong> à l’Université de Parakou, au Bénin. Après l’obtention de mon baccalauréat série D en 2025, j’ai choisi de poursuivre un parcours qui me permet de comprendre les données, de les analyser et d’en tirer des informations utiles.</p>
-          <p data-i18n="about.p2">Je souhaite devenir <strong>Data Analyst</strong>, avec l’ambition d’évoluer progressivement vers la Data Science. Ce qui m’intéresse particulièrement, c’est de transformer des données brutes en informations compréhensibles pour mieux éclairer les décisions. Pour y parvenir, je développe mes connaissances en statistique, en programmation avec R et Python, en SQL et en visualisation de données.</p>
+          <p data-i18n="about.p1">Étudiant en <strong>deuxième année de Licence en Statistique Appliquée</strong> à l’Université de Parakou (Bénin). Je me forme à la <strong>collecte, au traitement et à l’analyse de données</strong>, avec <strong>R, Python, SQL et Excel</strong>.</p>
+          <p data-i18n="about.p2">Je recherche un <strong>stage</strong> ou une première expérience en analyse de données ou en collecte d’enquêtes, afin d’appliquer ces méthodes à des données réelles. À terme, je souhaite devenir <strong>Data Analyst</strong>, puis évoluer vers la Data Science. Je m’attache aussi à savoir expliquer ce que les résultats signifient, y compris à des personnes qui ne sont pas statisticiennes.</p>
         </div>
       </div>
     </section>
@@ -1172,37 +1195,24 @@
             </ul>
           </div>
           <div class="skill-card">
-            <h3 data-i18n="skills.card1.title">Programmation &amp; logiciels statistiques</h3>
+            <h3 data-i18n="skills.card1.title">Programmation &amp; outils</h3>
             <ul>
-              <li data-i18n="skills.card1.li1">R</li>
-              <li data-i18n="skills.card1.li2">Python</li>
-              <li data-i18n="skills.card1.li3">SQL</li>
-              <li data-i18n="skills.card1.li4">Stata</li>
+              <li data-i18n="skills.card1.li1">R (utilisé dans mes projets)</li>
+              <li data-i18n="skills.card1.li2">Python (bases)</li>
+              <li data-i18n="skills.card1.li3">SQL (bases)</li>
+              <li data-i18n="skills.card1.li4">Stata (notions)</li>
+              <li data-i18n="skills.card1.li5">HTML/CSS, JavaScript, Git &amp; GitHub (bases)</li>
             </ul>
           </div>
           <div class="skill-card">
-            <h3 data-i18n="skills.card6.title">Visualisation &amp; communication</h3>
+            <h3 data-i18n="skills.card4.title">Collecte &amp; communication</h3>
             <ul>
-              <li data-i18n="skills.card6.li1">Excel</li>
-              <li data-i18n="skills.card6.li2">Présentation et interprétation des résultats</li>
-              <li data-i18n="skills.card6.li3">Rédaction de rapports (LaTeX)</li>
-            </ul>
-          </div>
-          <div class="skill-card">
-            <h3 data-i18n="skills.card4.title">Collecte de données</h3>
-            <ul>
-              <li data-i18n="skills.card4.li1">KoboToolbox</li>
-              <li data-i18n="skills.card4.li2">Google Forms</li>
-              <li data-i18n="skills.card4.li3">Conception de questionnaires</li>
-              <li data-i18n="skills.card4.li4">Préparation et nettoyage des bases de données</li>
-            </ul>
-          </div>
-          <div class="skill-card">
-            <h3 data-i18n="skills.card2.title">Développement &amp; outils</h3>
-            <ul>
-              <li data-i18n="skills.card2.li1">HTML5 / CSS3</li>
-              <li data-i18n="skills.card2.li2">JavaScript (bases)</li>
-              <li data-i18n="skills.card2.li3">Git &amp; GitHub</li>
+              <li data-i18n="skills.card4.li1">KoboToolbox, Google Forms</li>
+              <li data-i18n="skills.card4.li2">Conception de questionnaires</li>
+              <li data-i18n="skills.card4.li3">Préparation et nettoyage des bases de données</li>
+              <li data-i18n="skills.card4.li4">Excel</li>
+              <li data-i18n="skills.card4.li5">Présentation et interprétation des résultats</li>
+              <li data-i18n="skills.card4.li6">Rédaction de rapports (LaTeX)</li>
             </ul>
           </div>
           <div class="skill-card">
@@ -1210,9 +1220,8 @@
             <ul>
               <li data-i18n="skills.card3.li1">Initiation au Machine Learning</li>
               <li data-i18n="skills.card3.li2">Visualisation avancée des données</li>
-              <li data-i18n="skills.card3.li3">Approfondissement de la programmation statistique</li>
-              <li data-i18n="skills.card3.li4">Power BI</li>
-              <li data-i18n="skills.card3.li5">Développement web (formation en cours)</li>
+              <li data-i18n="skills.card3.li3">Power BI</li>
+              <li data-i18n="skills.card3.li4">Développement web (formation en cours)</li>
             </ul>
           </div>
         </div>
@@ -1231,7 +1240,7 @@
             <div>
               <h3 data-i18n="education.cardTitle">Licence 2 — Statistique Appliquée</h3>
               <div class="edu-meta" data-i18n="education.meta">ENSPD – Université de Parakou, Bénin</div>
-              <p data-i18n="education.desc">Ma formation en Statistique Appliquée me permet d’acquérir les bases nécessaires pour collecter, organiser, analyser et interpréter des données. Elle combine les méthodes statistiques, la programmation scientifique avec R et Python, ainsi que la présentation et la visualisation des résultats.</p>
+              <p data-i18n="education.desc">Une formation qui couvre la collecte, l’analyse et l’interprétation des données, avec R et Python.</p>
               <p data-i18n="education.courses"><strong>Matières principales :</strong> théorie des sondages, estimation paramétrique, séries chronologiques, analyse des données (ACP, AFC, ACM), introduction à l’économétrie, conception et gestion de bases de données, perspectives démographiques.</p>
             </div>
           </article>
@@ -1260,19 +1269,53 @@
         <h2 class="section-title" data-i18n="projects.title">Projets</h2>
 
         <div class="projects-grid">
-          <article class="project-card">
-            <div class="project-stack">R · ACM · HCPC</div>
-            <h3 data-i18n="projects.p1.title">Profils de ménages au Bénin</h3>
-            <p data-i18n="projects.p1.desc"></p>
-            <div class="project-metrics">
-              <div class="metric"><strong data-i18n="projects.m1.value">8 012</strong><span data-i18n="projects.m1.label">ménages enquêtés</span></div>
-              <div class="metric"><strong data-i18n="projects.m2.value">4</strong><span data-i18n="projects.m2.label">profils de ménages</span></div>
-              <div class="metric"><strong data-i18n="projects.m3.value">× 2,7</strong><span data-i18n="projects.m3.label">écart de dépense médiane par tête entre les profils extrêmes</span></div>
+          <article class="project-card" aria-labelledby="p1-title">
+            <div class="project-visual" aria-hidden="true">
+              <svg viewBox="0 0 150 100" fill="none">
+                <path d="M10 90H140" style="stroke:var(--muted)" stroke-opacity=".5" stroke-width="2" stroke-linecap="round"/>
+                <rect x="20" y="52" width="20" height="38" rx="3" style="fill:var(--accent)"/>
+                <rect x="48" y="34" width="20" height="56" rx="3" style="fill:var(--blue)"/>
+                <rect x="76" y="44" width="20" height="46" rx="3" style="fill:var(--violet)"/>
+                <rect x="104" y="18" width="20" height="72" rx="3" style="fill:var(--accent)"/>
+                <path d="M22 40l28-16 28 8 44-22" style="stroke:var(--text)" stroke-opacity=".55" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </div>
-            <p class="project-note" data-i18n="projects.p1.note"></p>
-            <div class="project-links">
-              <a href="https://github.com/tamegnon-venud/projet-menages-benin" target="_blank" rel="noopener" class="btn btn-primary"><svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span data-i18n="projects.p1.code">Voir le code</span></a>
-              <a href="https://github.com/tamegnon-venud/projet-menages-benin/blob/main/report/rapport_profils_menages_benin.pdf" target="_blank" rel="noopener" class="btn btn-ghost btn-arrow"><span data-i18n="projects.p1.report">Lire le rapport (PDF)</span><svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+            <div class="project-body">
+              <div class="project-kind" data-i18n="projects.p1.kind">Analyse multivariée · EHCVM 2018-2019</div>
+              <h3 id="p1-title" data-i18n="projects.p1.title">Profils de ménages au Bénin</h3>
+              <p data-i18n="projects.p1.desc">Profils de ménages selon le logement, les services et les équipements (ACM et classification), validés par la dépense par tête.</p>
+              <ul class="project-facts">
+                <li><strong data-i18n="projects.m1.value">8 012</strong><span data-i18n="projects.m1.label">ménages enquêtés</span></li>
+                <li><strong data-i18n="projects.m2.value">4</strong><span data-i18n="projects.m2.label">profils de ménages</span></li>
+                <li><strong data-i18n="projects.m3.value">× 2,7</strong><span data-i18n="projects.m3.label">dépense médiane : profil le plus aisé vs le moins aisé</span></li>
+              </ul>
+              <ul class="project-tags"><li>R</li><li data-i18n="projects.p1.tag2">ACM</li><li>HCPC</li></ul>
+              <p class="project-note" data-i18n="projects.p1.note">Analyse descriptive. Source : EHCVM Bénin 2018-2019 (INSAE, Banque mondiale).</p>
+              <div class="project-links">
+                <a href="https://github.com/tamegnon-venud/projet-menages-benin" target="_blank" rel="noopener"><span data-i18n="projects.p1.code">Voir le code</span><svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+                <a href="https://github.com/tamegnon-venud/projet-menages-benin/blob/main/report/rapport_profils_menages_benin.pdf" target="_blank" rel="noopener"><span data-i18n="projects.p1.report">Lire le rapport (PDF)</span><svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+              </div>
+            </div>
+          </article>
+          <article class="project-card" aria-labelledby="c1-title">
+            <div class="project-visual project-visual--cert" aria-hidden="true">
+              <svg viewBox="0 0 60 60" fill="none">
+                <path d="M22 38l-5 18 10-6 5 6 1-18z" style="fill:var(--blue)"/>
+                <path d="M38 38l5 18-10-6-5 6-1-18z" style="fill:var(--violet)"/>
+                <circle cx="30" cy="26" r="17" style="fill:var(--accent)"/>
+                <path d="M22 26l6 6 11-12" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="project-body">
+              <div class="project-kind" data-i18n="certs.kind">Certificats · DataCamp</div>
+              <h3 id="c1-title" data-i18n="certs.title">DataCamp : Python, R et Excel</h3>
+              <p data-i18n="certs.desc">Trois cours d’introduction de 4 h chacun : premiers pas en Python, R et Excel.</p>
+              <ul class="cert-lines">
+                <li><span>Introduction to R</span><span class="cert-right"><time data-i18n="certs.r.date">24 juin 2026</time><a href="certificats/Introduction_to_R.pdf" target="_blank" rel="noopener" data-i18n="certs.view">Voir</a></span></li>
+                <li><span>Introduction to Python</span><span class="cert-right"><time data-i18n="certs.py.date">20 juin 2026</time><a href="certificats/Introduction_to_Python.pdf" target="_blank" rel="noopener" data-i18n="certs.view">Voir</a></span></li>
+                <li><span>Introduction to Excel</span><span class="cert-right"><time data-i18n="certs.xl.date">15 juin 2026</time><a href="certificats/Introduction_to_Excel.pdf" target="_blank" rel="noopener" data-i18n="certs.view">Voir</a></span></li>
+              </ul>
+              <ul class="project-tags"><li>Python</li><li>R</li><li>Excel</li></ul>
             </div>
           </article>
         </div>
@@ -1290,20 +1333,20 @@
             <h3 data-i18n="contact.subtitle">Échangeons</h3>
             <p class="contact-intro" data-i18n="contact.intro">Une question, une idée ou une opportunité ? Je serai ravi d’échanger avec vous.</p>
             <div class="contact-item">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              <a href="mailto:tamegnonvenud@gmail.com">tamegnonvenud@gmail.com</a>
+              <span class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+              <div class="contact-text"><span class="contact-label" data-i18n="contact.l.email">Email</span><a href="mailto:tamegnonvenud@gmail.com">tamegnonvenud@gmail.com</a></div>
             </div>
             <div class="contact-item">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              <a href="https://wa.me/2290141617337" target="_blank" rel="noopener">WhatsApp +229 01 41 61 73 37</a>
+              <span class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+              <div class="contact-text"><span class="contact-label" data-i18n="contact.l.whatsapp">WhatsApp</span><a href="https://wa.me/2290141617337" target="_blank" rel="noopener" data-i18n="contact.whatsapp">Écrire sur WhatsApp</a></div>
             </div>
             <div class="contact-item">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span data-i18n="loc">Parakou, Bénin</span>
+              <span class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+              <div class="contact-text"><span class="contact-label" data-i18n="contact.l.loc">Localisation</span><span class="contact-value" data-i18n="loc">Parakou, Bénin</span></div>
             </div>
-            <div class="contact-item" style="margin-top: 16px;">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-              <a href="https://linkedin.com/in/venud-tamegnon-61b8183b2" target="_blank" rel="noopener" style="color: var(--accent);" data-i18n="contact.linkedin">Retrouvons-nous sur LinkedIn</a>
+            <div class="contact-item">
+              <span class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></span>
+              <div class="contact-text"><span class="contact-label" data-i18n="contact.l.linkedin">LinkedIn</span><a href="https://linkedin.com/in/venud-tamegnon-61b8183b2" target="_blank" rel="noopener" data-i18n="contact.linkedin">Retrouvons-nous sur LinkedIn</a></div>
             </div>
           </div>
 
@@ -1331,12 +1374,13 @@
   <footer>
     <div class="container footer-inner">
       <span data-i18n="footer.text">© 2026 Sètondji Venud TAMEGNON. Statistique appliquée et analyse de données.</span>
-      <nav class="footer-links" aria-label="Liens">
+      <nav class="footer-links" aria-label="Liens externes" data-i18n-aria-label="footer.links">
         <a href="https://linkedin.com/in/venud-tamegnon-61b8183b2" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://github.com/tamegnon-venud" target="_blank" rel="noopener">GitHub</a>
       </nav>
     </div>
   </footer>
+  <a href="#top" class="to-top" aria-label="Haut de page" data-i18n-aria-label="footer.top" title="Haut de page"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg></a>
 
   <script>
     (function () {
@@ -1351,6 +1395,8 @@
 
       btn.addEventListener('click', () => setOpen(!links.classList.contains('open')));
       links.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setOpen(false)));
+      // Repasser en grand écran ferme le menu mobile resté ouvert
+      window.matchMedia('(min-width: 821px)').addEventListener('change', (e) => { if (e.matches) setOpen(false); });
       document.addEventListener('click', (e) => {
         if (!links.contains(e.target) && !btn.contains(e.target)) setOpen(false);
       });
@@ -1375,7 +1421,6 @@
         fr: { light: 'Passer en mode clair', dark: 'Passer en mode sombre' },
         en: { light: 'Switch to light mode', dark: 'Switch to dark mode' }
       };
-      const mq = window.matchMedia('(prefers-color-scheme: light)');
       const get = () => { try { return localStorage.getItem(KEY); } catch (e) { return null; } };
       const save = (v) => { try { localStorage.setItem(KEY, v); } catch (e) {} };
 
@@ -1400,10 +1445,6 @@
         paint(next);
         save(next);
       });
-
-      // Sans choix enregistré, on suit le réglage du système
-      const onSystem = (e) => { if (!get()) paint(e.matches ? 'light' : 'dark'); };
-      if (mq.addEventListener) mq.addEventListener('change', onSystem); else if (mq.addListener) mq.addListener(onSystem);
       document.addEventListener('langchange', updateLabel);
       paint(root.getAttribute('data-theme') || 'dark');
     })();
@@ -1427,20 +1468,22 @@
           'nav.contact': 'Contact',
           'nav.menu': 'Menu',
           'lang.list': 'Langues disponibles',
+          'nav.main': 'Navigation principale',
+          'footer.links': 'Liens externes',
           'skip': 'Aller au contenu',
           'loc': 'Parakou, Bénin',
-          'hero.photoAlt': 'Photo de Sètondji Venud Tamegnon',
+          'hero.photoAlt': 'Illustration : Sètondji travaillant sur son ordinateur',
           'hero.avail': 'Disponible pour un stage',
           'form.nameLabel': 'Nom',
           'form.emailLabel': 'Email',
           'form.messageLabel': 'Message',
           'hero.role': 'Étudiant en Statistique Appliquée · Analyse de données',
-          'hero.text': 'Je collecte, nettoie et analyse des données avec R et Python (sondages, analyse multivariée, séries chronologiques) pour produire des résultats clairs, utiles à la décision.',
+          'hero.text': 'Je collecte, nettoie et analyse des données avec R et Python (sondages, analyse multivariée, séries chronologiques).',
           'hero.cv': 'Télécharger mon CV',
           'hero.contact': 'Me contacter',
           'about.label': 'Profil',
           'about.title': 'À propos',
-          'about.p1': 'Étudiant en <strong>deuxième année de Licence en Statistique Appliquée</strong> à l’Université de Parakou (Bénin), je me forme à la <strong>collecte, au traitement et à l’analyse de données</strong> : théorie des sondages, estimation, séries chronologiques, analyse multivariée (ACP, AFC, ACM) et gestion de bases de données. Je travaille avec <strong>R, Python, SQL et Excel</strong>.',
+          'about.p1': 'Étudiant en <strong>deuxième année de Licence en Statistique Appliquée</strong> à l’Université de Parakou (Bénin). Je me forme à la <strong>collecte, au traitement et à l’analyse de données</strong>, avec <strong>R, Python, SQL et Excel</strong>.',
           'about.p2': 'Je recherche un <strong>stage</strong> ou une première expérience en analyse de données ou en collecte d’enquêtes, afin d’appliquer ces méthodes à des données réelles. À terme, je souhaite devenir <strong>Data Analyst</strong>, puis évoluer vers la Data Science. Je m’attache aussi à savoir expliquer ce que les résultats signifient, y compris à des personnes qui ne sont pas statisticiennes.',
           'skills.label': 'Savoir-faire',
           'skills.title': 'Compétences',
@@ -1451,30 +1494,24 @@
           'skills.card5.li4': 'Séries chronologiques',
           'skills.card5.li5': 'Analyse multivariée (ACP, AFC, ACM)',
           'skills.card5.li6': 'Introduction à l’économétrie',
-          'skills.card6.title': 'Visualisation & communication',
-          'skills.card6.li1': 'Excel',
-          'skills.card6.li2': 'Présentation et interprétation des résultats',
-          'skills.card6.li3': 'Rédaction de rapports (LaTeX)',
-          'skills.card1.title': 'Programmation & logiciels statistiques',
-          'skills.card1.li1': 'R',
-          'skills.card1.li2': 'Python',
-          'skills.card1.li3': 'SQL',
-          'skills.card1.li4': 'Stata',
-          'skills.card4.title': 'Collecte de données',
-          'skills.card4.li1': 'KoboToolbox',
-          'skills.card4.li2': 'Google Forms',
-          'skills.card4.li3': 'Conception de questionnaires',
-          'skills.card4.li4': 'Préparation et nettoyage des bases de données',
-          'skills.card2.title': 'Développement & outils',
-          'skills.card2.li1': 'HTML5 / CSS3',
-          'skills.card2.li2': 'JavaScript (bases)',
-          'skills.card2.li3': 'Git & GitHub',
+          'skills.card1.title': 'Programmation & outils',
+          'skills.card1.li1': 'R (utilisé dans mes projets)',
+          'skills.card1.li2': 'Python (bases)',
+          'skills.card1.li3': 'SQL (bases)',
+          'skills.card1.li4': 'Stata (notions)',
+          'skills.card1.li5': 'HTML/CSS, JavaScript, Git & GitHub (bases)',
+          'skills.card4.title': 'Collecte & communication',
+          'skills.card4.li1': 'KoboToolbox, Google Forms',
+          'skills.card4.li2': 'Conception de questionnaires',
+          'skills.card4.li3': 'Préparation et nettoyage des bases de données',
+          'skills.card4.li4': 'Excel',
+          'skills.card4.li5': 'Présentation et interprétation des résultats',
+          'skills.card4.li6': 'Rédaction de rapports (LaTeX)',
           'skills.card3.title': 'En cours d’apprentissage',
           'skills.card3.li1': 'Initiation au Machine Learning',
           'skills.card3.li2': 'Visualisation avancée des données',
-          'skills.card3.li3': 'Approfondissement de la programmation statistique',
-          'skills.card3.li4': 'Power BI',
-          'skills.card3.li5': 'Développement web (formation en cours)',
+          'skills.card3.li3': 'Power BI',
+          'skills.card3.li4': 'Développement web (formation en cours)',
           'skills.note': 'Mes compétences évoluent au fil de mes apprentissages et de mes expériences pratiques.',
           'education.label': 'Parcours',
           'education.title': 'Formation',
@@ -1485,18 +1522,27 @@
           'education.l1.meta': 'ENSPD – Université de Parakou, Bénin',
           'education.bac.title': 'Baccalauréat — Série D',
           'education.bac.meta': 'Bénin',
-          'education.desc': 'Ma formation en Statistique Appliquée me permet d’acquérir les bases nécessaires pour collecter, organiser, analyser et interpréter des données. Elle combine les méthodes statistiques, la programmation scientifique avec R et Python, ainsi que la présentation, la visualisation et la rédaction des résultats.',
+          'education.desc': 'Une formation qui couvre la collecte, l’analyse et l’interprétation des données, avec R et Python.',
           'education.courses': '<strong>Matières principales :</strong> théorie des sondages, estimation paramétrique, séries chronologiques, analyse des données (ACP, AFC, ACM), introduction à l’économétrie, conception et gestion de bases de données, perspectives démographiques.',
           'projects.label': 'Portfolio',
           'projects.title': 'Projets',
           'projects.p1.title': 'Profils de ménages au Bénin',
+          'projects.p1.kind': 'Analyse multivariée · EHCVM 2018-2019',
+          'certs.kind': 'Certificats · DataCamp',
+          'certs.view': 'Voir',
+          'certs.title': 'DataCamp : Python, R et Excel',
+          'certs.desc': 'Trois cours d’introduction de 4 h chacun : premiers pas en Python, R et Excel.',
+          'certs.r.date': '24 juin 2026',
+          'certs.py.date': '20 juin 2026',
+          'certs.xl.date': '15 juin 2026',
+          'projects.p1.tag2': 'ACM',
           'projects.p1.desc': 'Profils de ménages selon le logement, les services et les équipements (ACM et classification), validés par la dépense par tête.',
           'projects.m1.value': '8 012',
           'projects.m1.label': 'ménages enquêtés',
           'projects.m2.value': '4',
           'projects.m2.label': 'profils de ménages',
           'projects.m3.value': '× 2,7',
-          'projects.m3.label': 'écart de dépense médiane entre les profils extrêmes',
+          'projects.m3.label': 'dépense médiane : profil le plus aisé vs le moins aisé',
           'projects.p1.note': 'Analyse descriptive. Source : EHCVM Bénin 2018-2019 (INSAE, Banque mondiale).',
           'projects.p1.code': 'Voir le code',
           'projects.p1.report': 'Lire le rapport (PDF)',
@@ -1505,6 +1551,11 @@
           'contact.title': 'Contact',
           'contact.subtitle': 'Échangeons',
           'contact.intro': 'Une question, une idée ou une opportunité ? Je serai ravi d’échanger avec vous.',
+          'contact.l.email': 'Email',
+          'contact.l.whatsapp': 'WhatsApp',
+          'contact.l.loc': 'Localisation',
+          'contact.l.linkedin': 'LinkedIn',
+          'contact.whatsapp': 'Écrire sur WhatsApp',
           'contact.linkedin': 'Retrouvons-nous sur LinkedIn',
           'form.submit': 'Envoyer le message',
           'form.success': 'Merci, votre message a bien été envoyé.',
@@ -1520,20 +1571,22 @@
           'nav.contact': 'Contact',
           'nav.menu': 'Menu',
           'lang.list': 'Available languages',
+          'nav.main': 'Main navigation',
+          'footer.links': 'External links',
           'skip': 'Skip to content',
           'loc': 'Parakou, Benin',
-          'hero.photoAlt': 'Photo of Sètondji Venud Tamegnon',
+          'hero.photoAlt': 'Illustration: Sètondji working on his computer',
           'hero.avail': 'Available for internships',
           'form.nameLabel': 'Name',
           'form.emailLabel': 'Email',
           'form.messageLabel': 'Message',
           'hero.role': 'Applied Statistics Student · Data Analysis',
-          'hero.text': 'I collect, clean and analyze data with R and Python (surveys, multivariate analysis, time series) to produce clear results that support decisions.',
+          'hero.text': 'I collect, clean and analyze data with R and Python (surveys, multivariate analysis, time series).',
           'hero.cv': 'Download my CV',
           'hero.contact': 'Contact me',
           'about.label': 'Profile',
           'about.title': 'About',
-          'about.p1': 'As a <strong>second-year Applied Statistics</strong> student at the University of Parakou (Benin), I am training in <strong>data collection, processing and analysis</strong>: sampling theory, estimation, time series, multivariate analysis (PCA, CA, MCA) and database management. I work with <strong>R, Python, SQL and Excel</strong>.',
+          'about.p1': 'I am a <strong>second-year Applied Statistics</strong> student at the University of Parakou (Benin). I am training in <strong>data collection, processing and analysis</strong>, using <strong>R, Python, SQL and Excel</strong>.',
           'about.p2': 'I am looking for an <strong>internship</strong> or a first experience in data analysis or survey data collection, so I can apply these methods to real data. In the longer term, I aim to become a <strong>Data Analyst</strong> and then move into Data Science. I also work on explaining what results mean, including to non-statisticians.',
           'skills.label': 'Toolkit',
           'skills.title': 'Skills',
@@ -1544,30 +1597,24 @@
           'skills.card5.li4': 'Time series',
           'skills.card5.li5': 'Multivariate analysis (PCA, CA, MCA)',
           'skills.card5.li6': 'Introduction to econometrics',
-          'skills.card6.title': 'Visualization & Communication',
-          'skills.card6.li1': 'Excel',
-          'skills.card6.li2': 'Presenting and interpreting results',
-          'skills.card6.li3': 'Report writing (LaTeX)',
-          'skills.card1.title': 'Programming & Statistical Software',
-          'skills.card1.li1': 'R',
-          'skills.card1.li2': 'Python',
-          'skills.card1.li3': 'SQL',
-          'skills.card1.li4': 'Excel',
-          'skills.card4.title': 'Data Collection',
-          'skills.card4.li1': 'KoboToolbox',
-          'skills.card4.li2': 'Google Forms',
-          'skills.card4.li3': 'Questionnaire design',
-          'skills.card4.li4': 'Database preparation and cleaning',
-          'skills.card2.title': 'Development & Tools',
-          'skills.card2.li1': 'HTML5 / CSS3',
-          'skills.card2.li2': 'JavaScript (basics)',
-          'skills.card2.li3': 'Git & GitHub',
+          'skills.card1.title': 'Programming & Tools',
+          'skills.card1.li1': 'R (used in my projects)',
+          'skills.card1.li2': 'Python (basics)',
+          'skills.card1.li3': 'SQL (basics)',
+          'skills.card1.li4': 'Stata (familiar)',
+          'skills.card1.li5': 'HTML/CSS, JavaScript, Git & GitHub (basics)',
+          'skills.card4.title': 'Collection & Communication',
+          'skills.card4.li1': 'KoboToolbox, Google Forms',
+          'skills.card4.li2': 'Questionnaire design',
+          'skills.card4.li3': 'Database preparation and cleaning',
+          'skills.card4.li4': 'Excel',
+          'skills.card4.li5': 'Presenting and interpreting results',
+          'skills.card4.li6': 'Report writing (LaTeX)',
           'skills.card3.title': 'Currently Learning',
           'skills.card3.li1': 'Introduction to Machine Learning',
           'skills.card3.li2': 'Advanced Data Visualization',
-          'skills.card3.li3': 'Further Development of Statistical Programming Skills',
-          'skills.card3.li4': 'Power BI',
-          'skills.card3.li5': 'Web development (ongoing training)',
+          'skills.card3.li3': 'Power BI',
+          'skills.card3.li4': 'Web development (ongoing training)',
           'skills.note': 'My skills continue to grow through learning and hands-on experience.',
           'education.label': 'Background',
           'education.title': 'Education',
@@ -1578,18 +1625,27 @@
           'education.l1.meta': 'ENSPD – University of Parakou, Benin',
           'education.bac.title': 'Baccalaureate — Science Track (Series D)',
           'education.bac.meta': 'Benin',
-          'education.desc': 'My Applied Statistics program provides me with the foundations to collect, organize, analyze and interpret data. It combines statistical methods, scientific programming with R and Python, and the presentation, visualization and reporting of results.',
+          'education.desc': 'A program covering data collection, analysis and interpretation, with R and Python.',
           'education.courses': '<strong>Main courses:</strong> sampling theory, parametric estimation, time series, data analysis (PCA, CA, MCA), introduction to econometrics, database design and management, demographic projections.',
           'projects.label': 'Portfolio',
           'projects.title': 'Projects',
           'projects.p1.title': 'Household profiles in Benin',
+          'projects.p1.kind': 'Multivariate analysis · EHCVM 2018-2019',
+          'certs.kind': 'Certificates · DataCamp',
+          'certs.view': 'View',
+          'certs.title': 'DataCamp: Python, R and Excel',
+          'certs.desc': 'Three introductory courses of 4 hours each: first steps in Python, R and Excel.',
+          'certs.r.date': 'June 24, 2026',
+          'certs.py.date': 'June 20, 2026',
+          'certs.xl.date': 'June 15, 2026',
+          'projects.p1.tag2': 'MCA',
           'projects.p1.desc': 'Household profiles by housing, services and equipment (MCA and clustering), validated against per capita spending.',
           'projects.m1.value': '8,012',
           'projects.m1.label': 'surveyed households',
           'projects.m2.value': '4',
           'projects.m2.label': 'household profiles',
           'projects.m3.value': '× 2.7',
-          'projects.m3.label': 'gap in median spending between the extreme profiles',
+          'projects.m3.label': 'median spending: wealthiest vs poorest profile',
           'projects.p1.note': 'Descriptive analysis. Source: EHCVM Benin 2018-2019 (INSAE, World Bank).',
           'projects.p1.code': 'View the code',
           'projects.p1.report': 'Read the report (PDF)',
@@ -1598,6 +1654,11 @@
           'contact.title': 'Contact',
           'contact.subtitle': 'Let’s Connect',
           'contact.intro': 'Have a question, an idea or an opportunity? I’d be happy to connect.',
+          'contact.l.email': 'Email',
+          'contact.l.whatsapp': 'WhatsApp',
+          'contact.l.loc': 'Location',
+          'contact.l.linkedin': 'LinkedIn',
+          'contact.whatsapp': 'Message me on WhatsApp',
           'contact.linkedin': 'Connect with me on LinkedIn',
           'form.submit': 'Send message',
           'form.success': 'Thank you, your message has been sent.',
@@ -1745,7 +1806,13 @@
       });
 
       document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeLangMenu();
+        if (e.key === 'Escape' && langDropdown.classList.contains('open')) {
+          closeLangMenu();
+          langSwitch.focus();   // le focus ne se perd plus dans un menu masqué
+        }
+      });
+      langDropdown.addEventListener('focusout', (e) => {
+        if (e.relatedTarget && !langDropdown.contains(e.relatedTarget)) closeLangMenu();
       });
 
       // Formulaire : envoi sans quitter la page
@@ -1818,10 +1885,9 @@
           });
         });
       }, { rootMargin: '-40% 0px -55% 0px' });
-      document.querySelectorAll('[data-section]').forEach((el) => io.observe(el));
+      document.querySelectorAll('.hero, [data-section]').forEach((el) => io.observe(el));   // le hero efface le lien actif
     })();
   </script>
-  <a href="#top" class="to-top" aria-label="Haut de page" data-i18n-aria-label="footer.top" title="Haut de page"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg></a>
   <script>
     (function () {
       var b = document.querySelector('.to-top');

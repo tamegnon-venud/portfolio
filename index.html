@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sètondji Venud TAMEGNON | Statistique appliquée, données &amp; développement web</title>
+  <title>Portfolio | Sètondji Venud Tamegnon</title>
   <meta name="description" content="Sètondji Venud Tamegnon, étudiant en Licence 2 de Statistique Appliquée (Université de Parakou, Bénin). Analyse de données avec R, Python et Excel, développement web ; sondages, analyse multivariée, séries chronologiques. Compétences, formation et contact." />
   <meta name="color-scheme" content="dark light" />
   <meta name="google" content="notranslate" />
@@ -15,13 +15,13 @@
   <meta property="og:url" content="https://tamegnon-venud.github.io/portfolio/" />
   <meta property="og:image" content="https://tamegnon-venud.github.io/portfolio/photo.jpg" />
   <meta property="og:image:alt" content="Photo de Sètondji Venud Tamegnon" />
-  <meta property="og:title" content="Sètondji Venud TAMEGNON | Statistique appliquée, données &amp; développement web" />
+  <meta property="og:title" content="Portfolio | Sètondji Venud Tamegnon" />
   <meta property="og:description" content="Étudiant en Licence 2 de Statistique Appliquée (Université de Parakou, Bénin). Analyse de données : R, Python, Excel. Disponible pour un stage ou des missions freelance." />
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:site_name" content="Sètondji Venud TAMEGNON" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Sètondji Venud TAMEGNON | Statistique appliquée, données &amp; développement web" />
+  <meta name="twitter:title" content="Portfolio | Sètondji Venud Tamegnon" />
   <meta name="twitter:description" content="Étudiant en Licence 2 de Statistique Appliquée (Université de Parakou, Bénin). Analyse de données : R, Python, Excel. Disponible pour un stage ou des missions freelance." />
   <meta name="twitter:image" content="https://tamegnon-venud.github.io/portfolio/photo.jpg" />
 
@@ -1138,8 +1138,8 @@
       .hero { padding: 36px 0 32px; gap: 28px; }
       .hero h1 { font-size: clamp(1.9rem, 9vw, 2.3rem); }
       .hero-text { font-size: 1rem; }
-      .hero-actions { flex-direction: column; align-items: stretch; }
-      .hero-actions .btn { width: 100%; justify-content: center; box-sizing: border-box; }
+      .hero-actions { flex-direction: column; align-items: center; }
+      .hero-actions .btn { width: auto; justify-content: center; box-sizing: border-box; }
     }
   
     /* Services */
@@ -1208,6 +1208,52 @@
     .skills-learning { margin-top:40px; text-align:center; }
     .skills-learning h3 { font-family:var(--head); font-size:1.05rem; color:var(--muted); font-weight:600; }
     .sk-center-badges { justify-content:center; }
+  
+    /* ===== Hero : texte à gauche, photo à droite (ordinateur) ===== */
+    .hero-photo-wrap { position: relative; isolation: isolate; }
+    .hero-photo-wrap::before {
+      content: "";
+      position: absolute;
+      inset: -14%;
+      z-index: -1;
+      border-radius: 50%;
+      background: radial-gradient(closest-side, rgba(var(--accent-rgb), 0.16), transparent 72%);
+      pointer-events: none;
+    }
+    @media (min-width: 821px) {
+      .hero { grid-template-columns: minmax(0, 1fr) auto; gap: 64px; }
+      .hero-photo-wrap { width: clamp(180px, 20vw, 220px); justify-self: end; }
+      .hero-photo { width: 100%; height: auto; aspect-ratio: 1; }
+    }
+  
+    /* Photo remontée légèrement + légende */
+    .photo-meta { width: max-content; max-width: 92vw; }
+    .photo-meta strong { font-size: 0.95rem; white-space: nowrap; }
+    .photo-meta span { font-size: 0.82rem; }
+    @media (min-width: 821px) {
+      .hero-photo-wrap { top: -26px; }
+    }
+
+    /* Cartes de projet et de services : léger soulèvement au survol (comme les icônes du hero) */
+    .project-card, .service-card {
+      transition: transform 0.45s cubic-bezier(.22, .61, .36, 1), box-shadow 0.45s, border-color 0.3s;
+    }
+    .project-card:hover, .project-card:focus-within,
+    .service-card:hover, .service-card:focus-within {
+      transform: translateY(-5px);
+      border-color: rgba(var(--accent-rgb), 0.4);
+      box-shadow: 0 14px 30px rgba(var(--accent-rgb), 0.16);
+    }
+
+    /* Apparition des sections au défilement */
+    @media (prefers-reduced-motion: no-preference) {
+      .js-reveal [data-section] > .container.reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+      }
+      .js-reveal [data-section] > .container.reveal.in { opacity: 1; transform: none; }
+    }
   </style>
 </head>
 <body>
@@ -1290,6 +1336,16 @@
           <a href="https://github.com/tamegnon-venud" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
           </a>
+        </div>
+      </div>
+
+      <div class="hero-photo-wrap">
+        <div class="hero-photo">
+          <img src="photo.jpg" alt="Portrait de Sètondji Venud Tamegnon" data-i18n-alt="hero.photoAlt" width="600" height="600" fetchpriority="high" decoding="async">
+        </div>
+        <div class="photo-meta">
+          <strong>Sètondji Venud Tamegnon</strong>
+          <span data-i18n="hero.photoLoc">Parakou, Bénin</span>
         </div>
       </div>
     </section>
@@ -1654,7 +1710,8 @@
           'footer.links': 'Liens externes',
           'skip': 'Aller au contenu',
           'loc': 'Parakou, Bénin',
-          'hero.photoAlt': 'Illustration : Sètondji travaillant sur son ordinateur',
+          'hero.photoAlt': 'Portrait de Sètondji Venud Tamegnon',
+          'hero.photoLoc': 'Parakou, Bénin',
           'hero.avail': 'Ouvert aux opportunités',
           'form.nameLabel': 'Nom',
           'form.emailLabel': 'Email',
@@ -1793,7 +1850,8 @@
           'footer.links': 'External links',
           'skip': 'Skip to content',
           'loc': 'Parakou, Benin',
-          'hero.photoAlt': 'Illustration: Sètondji working on his computer',
+          'hero.photoAlt': 'Portrait of Sètondji Venud Tamegnon',
+          'hero.photoLoc': 'Parakou, Benin',
           'hero.avail': 'Open to opportunities',
           'form.nameLabel': 'Name',
           'form.emailLabel': 'Email',
@@ -1900,8 +1958,8 @@
       };
 
       const titles = {
-        fr: 'Sètondji Venud TAMEGNON | Statistique appliquée, données & développement web',
-        en: 'Sètondji Venud TAMEGNON | Applied Statistics, Data & Web Development'
+        fr: 'Portfolio | Sètondji Venud Tamegnon',
+        en: 'Portfolio | Sètondji Venud Tamegnon'
       };
       const descriptions = {
         fr: 'Sètondji Venud Tamegnon, étudiant en Licence 2 de Statistique Appliquée (Université de Parakou, Bénin). Analyse de données avec R, Python et Excel, développement web ; sondages, analyse multivariée, séries chronologiques. Compétences, formation et contact.',
@@ -2138,6 +2196,22 @@
       }
       document.addEventListener('langchange', greet);
       greet();
+    })();
+  </script>
+  <script>
+    // Apparition des sections au défilement (désactivée si « réduire les animations »)
+    (function () {
+      if (!('IntersectionObserver' in window)) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var items = document.querySelectorAll('[data-section] > .container');
+      if (!items.length) return;
+      document.documentElement.classList.add('js-reveal');
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) { en.target.classList.add('in'); obs.unobserve(en.target); }
+        });
+      }, { threshold: 0.06, rootMargin: '0px 0px -8% 0px' });
+      items.forEach(function (el) { el.classList.add('reveal'); obs.observe(el); });
     })();
   </script>
 </body>

@@ -8,6 +8,7 @@
   <meta name="color-scheme" content="dark light" />
   <meta name="google" content="notranslate" />
 
+  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==" />
   <link rel="canonical" href="https://tamegnon-venud.github.io/portfolio/" />
 
   <!-- Aperçu de partage (WhatsApp, LinkedIn…) -->
@@ -1254,6 +1255,52 @@
       }
       .js-reveal [data-section] > .container.reveal.in { opacity: 1; transform: none; }
     }
+  
+    /* ===== Thème clair : plus de profondeur, de couleur et de relief ===== */
+    :root[data-theme="light"] {
+      --bg: #F4F7FE;
+      --bg2: #E9F0FD;
+      --card: #FFFFFF;
+      --border: rgba(30, 58, 138, 0.10);
+      --soft: rgba(29, 78, 216, 0.06);
+      --soft2: rgba(29, 78, 216, 0.10);
+      --header-bg: rgba(255, 255, 255, 0.78);
+      --card-shadow: 0 1px 2px rgba(15, 35, 90, 0.05), 0 10px 28px rgba(29, 78, 216, 0.08);
+      --btn-shadow: 0 8px 20px rgba(37, 99, 235, 0.30);
+      --shadow-photo: 0 14px 32px rgba(29, 78, 216, 0.22);
+    }
+    /* Lueurs colorées en haut de page */
+    html[data-theme="light"] body {
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(760px 420px at 88% -40px, rgba(59, 130, 246, 0.20), transparent 65%),
+        radial-gradient(620px 380px at 4% 120px, rgba(124, 58, 237, 0.10), transparent 65%);
+      background-repeat: no-repeat;
+      background-size: 100% 800px;
+    }
+    html[data-theme="light"] header { box-shadow: 0 6px 22px rgba(15, 35, 90, 0.06); }
+    html[data-theme="light"] .section-dark {
+      background: linear-gradient(180deg, #EBF2FE 0%, #E2EBFC 100%);
+      border-block-color: rgba(29, 78, 216, 0.10);
+    }
+    html[data-theme="light"] .btn-primary {
+      background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+      box-shadow: var(--btn-shadow);
+    }
+    html[data-theme="light"] .btn-primary:hover {
+      background: linear-gradient(135deg, #2563EB, #1E40AF);
+    }
+    html[data-theme="light"] .social a {
+      background: #FFFFFF;
+      border-color: rgba(29, 78, 216, 0.18);
+      box-shadow: 0 4px 12px rgba(15, 35, 90, 0.08);
+    }
+    html[data-theme="light"] .sk-b {
+      background: #FFFFFF;
+      border-color: rgba(29, 78, 216, 0.14);
+      box-shadow: 0 1px 2px rgba(15, 35, 90, 0.05);
+    }
+    html[data-theme="light"] footer { background: #FFFFFF; }
   </style>
 </head>
 <body>
@@ -1570,7 +1617,7 @@
 
   <footer>
     <div class="container footer-inner">
-      <span data-i18n="footer.text">© 2026 Sètondji Venud TAMEGNON.</span>
+      <span data-i18n="footer.text">© 2026 Sètondji Venud TAMEGNON</span>
       <nav class="footer-links" aria-label="Liens externes" data-i18n-aria-label="footer.links">
         <a href="https://linkedin.com/in/venud-tamegnon-61b8183b2" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://github.com/tamegnon-venud" target="_blank" rel="noopener">GitHub</a>
@@ -1808,7 +1855,7 @@
           'form.success': 'Merci, votre message a bien été envoyé.',
           'form.error': 'L’envoi a échoué. Réessayez ou écrivez-moi directement par e-mail.',
           'footer.top': 'Haut de page',
-          'footer.text': '© ' + new Date().getFullYear() + ' Sètondji Venud TAMEGNON. Statistique appliquée et analyse de données.'
+          'footer.text': '© ' + new Date().getFullYear() + ' Sètondji Venud TAMEGNON'
         },
         en: {
           'skl.web': 'Web development',
@@ -1948,7 +1995,7 @@
           'form.success': 'Thank you, your message has been sent.',
           'form.error': 'Sending failed. Please try again or email me directly.',
           'footer.top': 'Back to top',
-          'footer.text': '© ' + new Date().getFullYear() + ' Sètondji Venud TAMEGNON. Applied statistics and data analysis.'
+          'footer.text': '© ' + new Date().getFullYear() + ' Sètondji Venud TAMEGNON'
         }
       };
 
